@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+SERVICE_NAME=gatsby
+IS_SERVICE_RUNNING=$(docker-compose ps --filter status=running --services)
+
+if [ -n "$IS_SERVICE_RUNNING" ]; then
+	docker-compose exec $SERVICE_NAME $@
+else
+	docker-compose run --rm --service-ports $SERVICE_NAME $@
+fi

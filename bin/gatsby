@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -eu
+
+function develop() {
+	exec bin/exec yarn develop --host 0.0.0.0
+}
+
+function build() {
+	exec bin/exec yarn build
+}
+
+function format() {
+	exec bin/exec yarn format
+}
+
+function yarn() {
+	exec bin/exec yarn $@
+}
+
+function usage() {
+	cat <<EOF
+Usage:
+  $(basename ${0}) [command]
+
+Commands:
+  develop
+  build
+  format
+	yarn
+EOF
+}
+
+case "${1}" in
+
+"develop") develop ;;
+"build") build ;;
+"format") format ;;
+"yarn") yarn ${@:2} ;;
+
+*)
+	echo "[ERROR] Invalid subcommand '${1}'"
+	usage
+	exit 1
+	;;
+esac

@@ -1,0 +1,77 @@
+#!/bin/bash
+
+set -eu
+
+SERVICE_NAME=gatsby
+IS_SERVICE_RUNNING=$(docker-compose ps --filter status=running --services)
+
+function bash() {
+	exec bin/exec bash $@
+}
+
+function build() {
+	docker-compose build
+}
+
+function clean() {
+	docker-compose stop
+	docker-compose down --remove-orphans --rmi all --volumes
+}
+
+function init() {
+	clean && build
+}
+
+function start() {
+	docker-compose up -d
+}
+
+function stop() {
+	docker-compose stop
+}
+
+function status() {
+	docker-compose ps
+}
+
+function logs() {
+	docker-compose logs -tf
+}
+
+function usage() {
+	cat <<EOF
+Usage:
+  $(basename ${0}) [command]
+
+Commands:
+  bash
+  bulid
+  clean
+  init
+  start
+  stop
+  status
+  logs
+EOF
+}
+
+case "${1}" in
+
+"bash")
+	bash ${@:2}
+	;;
+
+"build") build ;;
+"clean") clean ;;
+"init") init ;;
+"start") start ;;
+"stop") stop ;;
+"status") status ;;
+"logs") logs ;;
+
+*)
+	echo "[ERROR] Invalid subcommand '${1}'"
+	usage
+	exit 1
+	;;
+esac
