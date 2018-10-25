@@ -4,9 +4,9 @@ import { graphql, StaticQuery } from 'gatsby';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import Header from './header';
+import { Header } from './header';
 
-const Layout: React.SFC = ({ children }) => (
+export const Layout: React.SFC = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -43,5 +43,3 @@ const Layout: React.SFC = ({ children }) => (
     )}
   />
 );
-
-export default Layout;

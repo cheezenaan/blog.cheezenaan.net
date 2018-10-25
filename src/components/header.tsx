@@ -5,7 +5,7 @@ interface Props {
   siteTitle: string;
 }
 
-const Header: React.SFC<Props> = ({ siteTitle }) => (
+export const Header: React.SFC<Props> = ({ siteTitle }) => (
   <div
     style={{
       background: 'rebeccapurple',
@@ -33,5 +33,3 @@ const Header: React.SFC<Props> = ({ siteTitle }) => (
     </div>
   </div>
 );
-
-export default Header;
