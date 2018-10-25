@@ -1,11 +1,12 @@
 {
   "parser": "typescript-eslint-parser",
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
     "no-undef": "off",
     "no-unused-vars": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
+    "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off"
   }
