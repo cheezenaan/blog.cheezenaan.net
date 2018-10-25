@@ -1,0 +1,32 @@
+version: 2
+default_settings: &default_settings
+  docker:
+    - image: circleci/node:8.12.0-stretch
+  working_directory: ~/repo
+jobs:
+  build:
+    <<: *default_settings
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-
+      - run: yarn install
+      - save_cache:
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run: yarn typecheck
+      - run: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - public/
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
