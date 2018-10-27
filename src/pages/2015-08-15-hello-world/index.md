@@ -14,7 +14,21 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Code Syntax
 
-```javascript
+```tsx{1-8,12}:title=src/templates/BlogPost.tsx
+interface Post {
+  frontmatter: {
+    date: string;
+    path: string;
+    title: string;
+  };
+  html: string;
+}
+
+interface Props {
+  data: {
+    markdownRemark: Post;
+  };
+}
 export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
