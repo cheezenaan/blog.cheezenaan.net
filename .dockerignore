@@ -11,3 +11,8 @@ docker-compose*
 README.md
 LICENSE
 .vscode
+
+# gatsby
+public
+.cache
+
