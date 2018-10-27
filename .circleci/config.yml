@@ -18,6 +18,7 @@ jobs:
           key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - run: yarn lint
       - run: yarn typecheck
       - run: yarn build
       - persist_to_workspace:
