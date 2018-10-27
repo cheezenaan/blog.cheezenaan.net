@@ -3,6 +3,7 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
