@@ -24,7 +24,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
 
   return (
     <div className="blog-post-container">
-      <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
+      <Helmet title={`${post.frontmatter.title} - blog.cheezenaan.net`} />
       <div className="blog-post">
         <h1>{post.frontmatter.title}</h1>
         <div
