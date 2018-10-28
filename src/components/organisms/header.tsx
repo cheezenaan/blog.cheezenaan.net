@@ -7,10 +7,8 @@ interface Props {
 
 export const Header: React.SFC<Props> = ({ siteTitle }) => (
   <div>
-    <div>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </div>
+    <h1>
+      <Link to="/">{siteTitle}</Link>
+    </h1>
   </div>
 );

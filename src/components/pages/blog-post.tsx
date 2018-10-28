@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import { Layout } from '../layout';
+import { Layout } from '../templates/layout';
 
 interface Post {
   frontmatter: {
