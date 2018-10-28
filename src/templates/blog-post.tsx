@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
+import { Layout } from '../components/layout';
+
 interface Post {
   frontmatter: {
     date: string;
@@ -23,16 +25,18 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <div className="blog-post-container">
-      <Helmet title={`${post.frontmatter.title} - blog.cheezenaan.net`} />
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+    <Layout>
+      <div className="blog-post-container">
+        <Helmet title={`${post.frontmatter.title} - blog.cheezenaan.net`} />
+        <div className="blog-post">
+          <h1>{post.frontmatter.title}</h1>
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 export default BlogPost;
