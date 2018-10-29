@@ -1,5 +1,6 @@
-import 'ress/ress.css';
+import 'bulma/css/bulma.css';
 
+import { Section } from 'bloomer';
 import { graphql, StaticQuery } from 'gatsby';
 import * as React from 'react';
 import Helmet from 'react-helmet';
@@ -26,8 +27,10 @@ export const Layout: React.SFC = ({ children }) => (
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div>{children}</div>
+        <Section>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <>{children}</>
+        </Section>
       </>
     )}
   />

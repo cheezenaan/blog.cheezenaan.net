@@ -1,8 +1,8 @@
 import './blog-post.css';
 
+import { Container, Content, Title } from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import Helmet from 'react-helmet';
 
 import { Layout } from '../templates/layout';
 
@@ -26,16 +26,10 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <div className="blog-post-container">
-        <Helmet title={`${post.frontmatter.title} - blog.cheezenaan.net`} />
-        <div className="blog-post">
-          <h1>{post.frontmatter.title}</h1>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        </div>
-      </div>
+      <Container>
+        <Title tag="h1">{post.frontmatter.title}</Title>
+        <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Container>
     </Layout>
   );
 };

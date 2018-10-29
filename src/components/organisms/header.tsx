@@ -1,3 +1,4 @@
+import { Title } from 'bloomer';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
@@ -6,9 +7,7 @@ interface Props {
 }
 
 export const Header: React.SFC<Props> = ({ siteTitle }) => (
-  <div>
-    <h1>
-      <Link to="/">{siteTitle}</Link>
-    </h1>
-  </div>
+  <Title>
+    <Link to="/">{siteTitle}</Link>
+  </Title>
 );

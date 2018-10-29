@@ -1,3 +1,4 @@
+import { Container, Content, Title } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
@@ -28,19 +29,19 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <div className="blog-posts">
+      <Container>
         {posts
           .filter(({ node: post }) => post.frontmatter.title.length > 0)
           .map(({ node: post }) => (
-            <div className="blog-post-preview" key={post.id}>
-              <h1>
+            <Content className="blog-post-preview" key={post.id}>
+              <Title tag="h2" isMarginless>
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h1>
-              <h2>{post.frontmatter.date}</h2>
+              </Title>
+              <p>{post.frontmatter.date}</p>
               <p>{post.excerpt}</p>
-            </div>
+            </Content>
           ))}
-      </div>
+      </Container>
     </Layout>
   );
 };
