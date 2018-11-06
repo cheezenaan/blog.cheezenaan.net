@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
 import { Layout } from '../components/templates/layout';
+import { WrappedHeader as Header } from '../components/organisms/header';
 
 interface Post {
   node: {
@@ -29,6 +30,7 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
+      <Header />
       <Container>
         {posts
           .filter(({ node: post }) => post.frontmatter.title.length > 0)

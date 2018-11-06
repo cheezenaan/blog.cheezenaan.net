@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { Layout } from '../templates/layout';
+import { WrappedHeader as Header } from '../organisms/header';
 
 interface Post {
   frontmatter: {
@@ -26,6 +27,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
+      <Header tag="span" />
       <Container>
         <Title tag="h1">{post.frontmatter.title}</Title>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
