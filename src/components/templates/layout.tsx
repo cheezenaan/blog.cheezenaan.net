@@ -1,5 +1,3 @@
-import 'bulma/css/bulma.css';
-
 import { Section } from 'bloomer';
 import { graphql, StaticQuery } from 'gatsby';
 import * as React from 'react';
