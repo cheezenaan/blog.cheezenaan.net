@@ -5,15 +5,19 @@ export interface InjectedProps {
   siteTitle: string;
 }
 
-interface OptionsProps {
-  [key: string]: any;
+interface Props {
+  children: (props: InjectedProps) => React.ReactNode;
 }
 
-export const withSiteMetadata = (options: OptionsProps = {}) => <
-  OriginalProps extends object
->(
-  Component: React.ComponentType<OriginalProps & InjectedProps>
-) => (
+interface SiteMetadata {
+  site: {
+    siteMetadata: {
+      title: string;
+    };
+  };
+}
+
+export const WithSiteMetadata = ({ children }: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -24,11 +28,11 @@ export const withSiteMetadata = (options: OptionsProps = {}) => <
         }
       }
     `}
-    render={(data: any) => {
+    render={(data: SiteMetadata) => {
       const { siteMetadata } = data.site;
-      const renderProps = { ...options, siteTitle: siteMetadata.title };
+      const renderProps = { siteTitle: siteMetadata.title };
 
-      return <Component {...renderProps} />;
+      return children && children({ ...renderProps });
     }}
   />
 );

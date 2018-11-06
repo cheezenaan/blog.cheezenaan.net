@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import { InjectedProps, withSiteMetadata } from '../helper';
+import { InjectedProps, WithSiteMetadata } from '../helper';
 
 type MetatagProps = {};
 type Props = MetatagProps & InjectedProps;
@@ -16,5 +16,10 @@ const Metatag: React.SFC<Props> = ({ siteTitle }) => (
   />
 );
 
-export const WrappedMetaTag: React.SFC<MetatagProps> = () =>
-  withSiteMetadata()(Metatag);
+export const WrappedMetatag: React.SFC<MetatagProps> = (
+  props: MetatagProps
+) => (
+  <WithSiteMetadata>
+    {providerProps => <Metatag {...props} {...providerProps} />}
+  </WithSiteMetadata>
+);

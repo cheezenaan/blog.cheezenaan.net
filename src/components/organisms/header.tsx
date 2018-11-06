@@ -2,7 +2,7 @@ import { Title } from 'bloomer';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
-import { InjectedProps, withSiteMetadata } from '../helper';
+import { InjectedProps, WithSiteMetadata } from '../helper';
 
 type HeaderProps = {
   tag?: keyof React.ReactHTML;
@@ -17,5 +17,8 @@ export const Header: React.SFC<Props> = ({ tag, isSize, siteTitle }) => (
   </Title>
 );
 
-export const WrappedHeader: React.SFC<HeaderProps> = ({ tag, isSize }) =>
-  withSiteMetadata({ tag, isSize })(Header);
+export const WrappedHeader = (props: HeaderProps) => (
+  <WithSiteMetadata>
+    {providerProps => <Header {...props} {...providerProps} />}
+  </WithSiteMetadata>
+);

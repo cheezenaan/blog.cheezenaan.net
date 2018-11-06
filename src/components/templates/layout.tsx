@@ -1,11 +1,11 @@
 import { Section } from 'bloomer';
 import * as React from 'react';
 
-import { WrappedMetaTag as MetaTag } from '../organisms/metatag';
+import { WrappedMetatag as Metatag } from '../organisms/metatag';
 
 export const Layout: React.SFC = ({ children }) => (
   <>
-    <MetaTag />
+    <Metatag />
     <Section>
       <>{children}</>
     </Section>
