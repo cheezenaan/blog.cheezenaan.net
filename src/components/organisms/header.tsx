@@ -2,22 +2,20 @@ import { Title } from 'bloomer';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
-import { InjectedProps, WithSiteMetadata } from '../helper';
+import { InjectedProps, Omit, WithSiteMetadata } from '../helper';
 
-type HeaderProps = {
+type Props = InjectedProps & {
   tag?: keyof React.ReactHTML;
   isSize?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
-type Props = HeaderProps & InjectedProps;
-
-export const Header: React.SFC<Props> = ({ tag, isSize, siteTitle }) => (
-  <Title tag={tag} isSize={isSize}>
+const Header: React.SFC<Props> = ({ siteTitle, ...titleProps }) => (
+  <Title {...titleProps}>
     <Link to="/">{siteTitle}</Link>
   </Title>
 );
 
-export const WrappedHeader = (props: HeaderProps) => (
+export const WrappedHeader = (props: Omit<Props, keyof InjectedProps>) => (
   <WithSiteMetadata>
     {providerProps => <Header {...props} {...providerProps} />}
   </WithSiteMetadata>

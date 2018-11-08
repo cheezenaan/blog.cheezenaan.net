@@ -1,6 +1,11 @@
 import { graphql, StaticQuery } from 'gatsby';
 import * as React from 'react';
 
+/**
+ * type Original = Omit<{ foo: string, bar: number }, { bar: number }> // = { foo: string; }
+ */
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
 export interface InjectedProps {
   siteTitle: string;
 }
