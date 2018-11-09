@@ -1,9 +1,12 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import { InjectedProps, WithSiteMetadata } from '../providers/metadata';
+import {
+  ProviderProps,
+  SiteMetadataProvider,
+} from '../providers/site-metadata';
 
-type Props = InjectedProps;
+type Props = ProviderProps;
 
 const Metatag: React.SFC<Props> = ({ siteTitle }) => (
   <Helmet
@@ -16,7 +19,7 @@ const Metatag: React.SFC<Props> = ({ siteTitle }) => (
 );
 
 export const WrappedMetatag = () => (
-  <WithSiteMetadata>
+  <SiteMetadataProvider>
     {providerProps => <Metatag {...providerProps} />}
-  </WithSiteMetadata>
+  </SiteMetadataProvider>
 );

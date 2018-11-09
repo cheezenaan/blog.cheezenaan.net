@@ -10,14 +10,14 @@ interface SiteMetadata {
 }
 
 interface Props {
-  children: (props: InjectedProps) => React.ReactNode;
+  children: (props: ProviderProps) => React.ReactNode;
 }
 
-export interface InjectedProps {
+export interface ProviderProps {
   siteTitle: string;
 }
 
-export const WithSiteMetadata = ({ children }: Props) => (
+export const SiteMetadataProvider = ({ children }: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
