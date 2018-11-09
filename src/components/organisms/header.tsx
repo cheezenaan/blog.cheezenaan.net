@@ -2,7 +2,7 @@ import { Title } from 'bloomer';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
-import { InjectedProps, Omit, WithSiteMetadata } from '../helper';
+import { InjectedProps, WithSiteMetadata } from '../providers/metadata';
 
 type Props = InjectedProps & {
   tag?: keyof React.ReactHTML;

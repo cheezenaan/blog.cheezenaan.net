@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import { InjectedProps, WithSiteMetadata } from '../helper';
+import { InjectedProps, WithSiteMetadata } from '../providers/metadata';
 
 type Props = InjectedProps;
 
