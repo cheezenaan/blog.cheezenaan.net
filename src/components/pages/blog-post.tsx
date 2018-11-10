@@ -1,11 +1,9 @@
-import './blog-post.sass';
-
 import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { WrappedMetatag as Metatag } from '../organisms/metatag';
 import { NavigationHeader } from '../organisms/navigation-header';
+import { Layout } from '../templates/layout';
 
 interface Post {
   frontmatter: {
@@ -26,8 +24,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <>
-      <Metatag />
+    <Layout>
       <NavigationHeader titleTag="header" />
       <Section>
         <Container>
@@ -40,7 +37,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         </Container>
       </Section>
-    </>
+    </Layout>
   );
 };
 export default BlogPost;

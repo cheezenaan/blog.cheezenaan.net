@@ -2,8 +2,8 @@ import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
-import { WrappedMetatag as Metatag } from '../components/organisms/metatag';
 import { NavigationHeader } from '../components/organisms/navigation-header';
+import { Layout } from '../components/templates/layout';
 
 interface Post {
   node: {
@@ -29,15 +29,14 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <>
-      <Metatag />
+    <Layout>
       <NavigationHeader />
       <Section>
         <Container>
           {posts
             .filter(({ node: post }) => post.frontmatter.title.length > 0)
             .map(({ node: post }) => (
-              <Box>
+              <Box key={post.id}>
                 <Heading>{post.frontmatter.date}</Heading>
                 <Content key={post.id}>
                   <Subtitle>
@@ -51,10 +50,9 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
             ))}
         </Container>
       </Section>
-    </>
+    </Layout>
   );
 };
-
 export default IndexPage;
 
 export const pageQuery = graphql`

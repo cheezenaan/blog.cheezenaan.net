@@ -1,12 +1,11 @@
 import { Container, Content, Section, Subtitle } from 'bloomer';
 import * as React from 'react';
 
-import { WrappedMetatag as Metatag } from '../components/organisms/metatag';
 import { NavigationHeader } from '../components/organisms/navigation-header';
+import { Layout } from '../components/templates/layout';
 
 const NotFoundPage = () => (
-  <>
-    <Metatag />
+  <Layout>
     <NavigationHeader />
     <Section>
       <Container>
@@ -16,7 +15,6 @@ const NotFoundPage = () => (
         </Content>
       </Container>
     </Section>
-  </>
+  </Layout>
 );
-
 export default NotFoundPage;
