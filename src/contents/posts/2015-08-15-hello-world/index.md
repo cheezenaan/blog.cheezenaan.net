@@ -14,6 +14,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Code Syntax
 
+`const sound = 'euphonium'; console.log({ sound }); // => { sound: 'euphonium' }`
+
 ```tsx{1-8,12}:title=src/templates/BlogPost.tsx
 interface Post {
   frontmatter: {

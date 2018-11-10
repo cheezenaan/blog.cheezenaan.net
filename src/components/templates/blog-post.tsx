@@ -1,5 +1,4 @@
-import './blog-post.css';
-import 'bulma/css/bulma.css';
+import './blog-post.sass';
 
 import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';

@@ -1,5 +1,3 @@
-import 'bulma/css/bulma.css';
-
 import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
