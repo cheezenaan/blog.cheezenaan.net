@@ -2,12 +2,24 @@ import { Title } from 'bloomer';
 import { Link } from 'gatsby';
 import * as React from 'react';
 
-interface Props {
-  siteTitle: string;
-}
+import {
+  ProviderProps,
+  SiteMetadataProvider,
+} from '../providers/site-metadata';
 
-export const Header: React.SFC<Props> = ({ siteTitle }) => (
-  <Title>
+type Props = ProviderProps & {
+  tag?: keyof React.ReactHTML;
+  isSize?: 1 | 2 | 3 | 4 | 5 | 6;
+};
+
+const Header: React.SFC<Props> = ({ siteTitle, ...titleProps }) => (
+  <Title {...titleProps}>
     <Link to="/">{siteTitle}</Link>
   </Title>
+);
+
+export const WrappedHeader = (props: Omit<Props, keyof ProviderProps>) => (
+  <SiteMetadataProvider>
+    {providerProps => <Header {...props} {...providerProps} />}
+  </SiteMetadataProvider>
 );
