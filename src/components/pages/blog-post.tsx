@@ -29,11 +29,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
       <Section>
         <Container>
           <Heading>{post.frontmatter.date}</Heading>
-          <Content>
-            <Title>{post.frontmatter.title}</Title>
-          </Content>
-        </Container>
-        <Container>
+          <Title>{post.frontmatter.title}</Title>
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         </Container>
       </Section>

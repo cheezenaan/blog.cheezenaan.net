@@ -38,13 +38,11 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
             .map(({ node: post }) => (
               <Box key={post.id}>
                 <Heading>{post.frontmatter.date}</Heading>
-                <Content key={post.id}>
-                  <Subtitle>
-                    <Link to={post.frontmatter.path}>
-                      {post.frontmatter.title}
-                    </Link>
-                  </Subtitle>
-                </Content>
+                <Subtitle>
+                  <Link to={post.frontmatter.path}>
+                    {post.frontmatter.title}
+                  </Link>
+                </Subtitle>
                 <Content>{post.excerpt}</Content>
               </Box>
             ))}
