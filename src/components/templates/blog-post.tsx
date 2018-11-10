@@ -1,21 +1,12 @@
 import './blog-post.css';
 import 'bulma/css/bulma.css';
 
-import {
-  Container,
-  Content,
-  Heading,
-  Navbar,
-  NavbarBrand,
-  NavbarItem,
-  Section,
-  Title,
-} from 'bloomer';
+import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { WrappedHeader as Header } from '../organisms/header';
 import { WrappedMetatag as Metatag } from '../organisms/metatag';
+import { NavigationHeader } from '../organisms/navigation-header';
 
 interface Post {
   frontmatter: {
@@ -38,15 +29,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   return (
     <>
       <Metatag />
-      <Navbar className="is-spaced has-shadow">
-        <Container>
-          <NavbarBrand>
-            <NavbarItem>
-              <Header tag="header" />
-            </NavbarItem>
-          </NavbarBrand>
-        </Container>
-      </Navbar>
+      <NavigationHeader titleTag="header" />
       <Section>
         <Container>
           <Heading>{post.frontmatter.date}</Heading>

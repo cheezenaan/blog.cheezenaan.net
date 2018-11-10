@@ -1,21 +1,11 @@
 import 'bulma/css/bulma.css';
 
-import {
-  Box,
-  Container,
-  Content,
-  Heading,
-  Navbar,
-  NavbarBrand,
-  NavbarItem,
-  Section,
-  Subtitle,
-} from 'bloomer';
+import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
-import { WrappedHeader as Header } from '../components/organisms/header';
 import { WrappedMetatag as Metatag } from '../components/organisms/metatag';
+import { NavigationHeader } from '../components/organisms/navigation-header';
 
 interface Post {
   node: {
@@ -43,15 +33,7 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
   return (
     <>
       <Metatag />
-      <Navbar className="is-spaced">
-        <Container>
-          <NavbarBrand>
-            <NavbarItem>
-              <Header tag="header" />
-            </NavbarItem>
-          </NavbarBrand>
-        </Container>
-      </Navbar>
+      <NavigationHeader />
       <Section>
         <Container>
           {posts
