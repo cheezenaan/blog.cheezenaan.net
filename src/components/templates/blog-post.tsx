@@ -1,4 +1,5 @@
 import './blog-post.css';
+import 'bulma/css/bulma.css';
 
 import {
   Container,
@@ -14,7 +15,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { WrappedHeader as Header } from '../organisms/header';
-import { Layout } from './layout';
+import { WrappedMetatag as Metatag } from '../organisms/metatag';
 
 interface Post {
   frontmatter: {
@@ -35,7 +36,8 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <>
+      <Metatag />
       <Navbar className="is-spaced has-shadow">
         <Container>
           <NavbarBrand>
@@ -56,7 +58,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         </Container>
       </Section>
-    </Layout>
+    </>
   );
 };
 export default BlogPost;

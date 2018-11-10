@@ -1,3 +1,5 @@
+import 'bulma/css/bulma.css';
+
 import {
   Box,
   Container,
@@ -13,7 +15,7 @@ import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
 import { WrappedHeader as Header } from '../components/organisms/header';
-import { Layout } from '../components/templates/layout';
+import { WrappedMetatag as Metatag } from '../components/organisms/metatag';
 
 interface Post {
   node: {
@@ -39,7 +41,8 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <Layout>
+    <>
+      <Metatag />
       <Navbar className="is-spaced">
         <Container>
           <NavbarBrand>
@@ -68,7 +71,7 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
             ))}
         </Container>
       </Section>
-    </Layout>
+    </>
   );
 };
 
