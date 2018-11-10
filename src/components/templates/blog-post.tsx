@@ -14,7 +14,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import { WrappedHeader as Header } from '../organisms/header';
-import { Layout } from '../templates/layout';
+import { Layout } from './layout';
 
 interface Post {
   frontmatter: {
