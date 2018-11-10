@@ -9,17 +9,19 @@ import {
 
 type Props = ProviderProps & {
   tag?: keyof React.ReactHTML;
-  isSize?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
-const Header: React.SFC<Props> = ({ siteTitle, ...titleProps }) => (
-  <Title {...titleProps}>
-    <Link to="/">{siteTitle}</Link>
-  </Title>
-);
-
+// TODO: Header というより Navbar 的な名前が正しそうなのでいいかんじに抽出しなおす
 export const WrappedHeader = (props: Omit<Props, keyof ProviderProps>) => (
   <SiteMetadataProvider>
-    {providerProps => <Header {...props} {...providerProps} />}
+    {providerProps => {
+      const { ...titleProps } = props;
+
+      return (
+        <Title {...titleProps} isSize={4}>
+          <Link to="/">{providerProps.siteTitle}</Link>
+        </Title>
+      );
+    }}
   </SiteMetadataProvider>
 );

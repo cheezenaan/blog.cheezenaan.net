@@ -1,9 +1,19 @@
-import { Container, Content, Title } from 'bloomer';
+import {
+  Box,
+  Container,
+  Content,
+  Heading,
+  Navbar,
+  NavbarBrand,
+  NavbarItem,
+  Section,
+  Subtitle,
+} from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
-import { Layout } from '../components/templates/layout';
 import { WrappedHeader as Header } from '../components/organisms/header';
+import { Layout } from '../components/templates/layout';
 
 interface Post {
   node: {
@@ -30,20 +40,34 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Header />
-      <Container>
-        {posts
-          .filter(({ node: post }) => post.frontmatter.title.length > 0)
-          .map(({ node: post }) => (
-            <Content className="blog-post-preview" key={post.id}>
-              <Title tag="h2" isMarginless>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </Title>
-              <p>{post.frontmatter.date}</p>
-              <p>{post.excerpt}</p>
-            </Content>
-          ))}
-      </Container>
+      <Navbar className="is-spaced">
+        <Container>
+          <NavbarBrand>
+            <NavbarItem>
+              <Header tag="header" />
+            </NavbarItem>
+          </NavbarBrand>
+        </Container>
+      </Navbar>
+      <Section>
+        <Container>
+          {posts
+            .filter(({ node: post }) => post.frontmatter.title.length > 0)
+            .map(({ node: post }) => (
+              <Box>
+                <Heading>{post.frontmatter.date}</Heading>
+                <Content key={post.id}>
+                  <Subtitle>
+                    <Link to={post.frontmatter.path}>
+                      {post.frontmatter.title}
+                    </Link>
+                  </Subtitle>
+                </Content>
+                <Content>{post.excerpt}</Content>
+              </Box>
+            ))}
+        </Container>
+      </Section>
     </Layout>
   );
 };

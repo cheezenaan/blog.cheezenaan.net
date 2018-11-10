@@ -1,11 +1,20 @@
 import './blog-post.css';
 
-import { Container, Content, Title } from 'bloomer';
+import {
+  Container,
+  Content,
+  Heading,
+  Navbar,
+  NavbarBrand,
+  NavbarItem,
+  Section,
+  Title,
+} from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { Layout } from '../templates/layout';
 import { WrappedHeader as Header } from '../organisms/header';
+import { Layout } from '../templates/layout';
 
 interface Post {
   frontmatter: {
@@ -27,11 +36,26 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Header tag="span" />
-      <Container>
-        <Title tag="h1">{post.frontmatter.title}</Title>
-        <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Container>
+      <Navbar className="is-spaced has-shadow">
+        <Container>
+          <NavbarBrand>
+            <NavbarItem>
+              <Header tag="header" />
+            </NavbarItem>
+          </NavbarBrand>
+        </Container>
+      </Navbar>
+      <Section>
+        <Container>
+          <Heading>{post.frontmatter.date}</Heading>
+          <Content>
+            <Title>{post.frontmatter.title}</Title>
+          </Content>
+        </Container>
+        <Container>
+          <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Container>
+      </Section>
     </Layout>
   );
 };
