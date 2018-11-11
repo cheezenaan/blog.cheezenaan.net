@@ -9505,9 +9505,9 @@ stylelint-config-standard@18.2.0:
   dependencies:
     stylelint-config-recommended "^2.1.0"
 
-stylelint-prettier@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/stylelint-prettier/-/stylelint-prettier-1.0.3.tgz#d7b1e8c331045dc1fd9d792dd8a1a5afc5304018"
+stylelint-prettier@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/stylelint-prettier/-/stylelint-prettier-1.0.4.tgz#d59a102568eed2f448a98fd2c549237ec2a7dac4"
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
