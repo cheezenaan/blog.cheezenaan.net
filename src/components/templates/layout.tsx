@@ -1,4 +1,5 @@
 import './layout.sass';
+import 'prismjs/themes/prism.css';
 
 import * as React from 'react';
 
