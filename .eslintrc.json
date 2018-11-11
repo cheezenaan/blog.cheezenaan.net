@@ -1,6 +1,6 @@
 {
   "parser": "typescript-eslint-parser",
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
   "rules": {
     "no-undef": "off",
     "no-unused-vars": "off",
