@@ -1,25 +1,18 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import {
-  ProviderProps,
-  SiteMetadataProvider,
-} from '../providers/site-metadata';
+import { SiteMetadataProvider } from '../providers/site-metadata';
 
-type Props = ProviderProps;
-
-const Metatag: React.SFC<Props> = ({ siteTitle }) => (
-  <Helmet
-    title={siteTitle}
-    meta={[
-      { name: 'description', content: 'Sample' },
-      { name: 'keywords', content: 'sample, something' },
-    ]}
-  />
-);
-
-export const WrappedMetatag = () => (
+export const Metatag = () => (
   <SiteMetadataProvider>
-    {providerProps => <Metatag {...providerProps} />}
+    {providerProps => (
+      <Helmet
+        title={providerProps.siteTitle}
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' },
+        ]}
+      />
+    )}
   </SiteMetadataProvider>
 );
