@@ -8,11 +8,10 @@ export const Metatag = () => (
     {providerProps => (
       <Helmet
         title={providerProps.siteTitle}
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
-      />
+        meta={[{ name: 'description', content: 'Private blog' }]}
+      >
+        <html lang="ja" />
+      </Helmet>
     )}
   </SiteMetadataProvider>
 );
