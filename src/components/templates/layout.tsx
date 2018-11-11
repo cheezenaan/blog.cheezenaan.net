@@ -1,13 +1,15 @@
-import { Section } from 'bloomer';
+import './layout.sass';
+import 'prismjs/themes/prism.css';
+
 import * as React from 'react';
 
-import { WrappedMetatag as Metatag } from '../organisms/metatag';
+import { Footer } from '../organisms/footer';
+import { Metatag } from '../organisms/metatag';
 
 export const Layout: React.SFC = ({ children }) => (
   <>
     <Metatag />
-    <Section>
-      <>{children}</>
-    </Section>
+    {children}
+    <Footer />
   </>
 );

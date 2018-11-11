@@ -1,9 +1,9 @@
-import { Container, Content, Title } from 'bloomer';
+import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
+import { NavigationHeader } from '../components/organisms/navigation-header';
 import { Layout } from '../components/templates/layout';
-import { WrappedHeader as Header } from '../components/organisms/header';
 
 interface Post {
   node: {
@@ -30,24 +30,27 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Header />
-      <Container>
-        {posts
-          .filter(({ node: post }) => post.frontmatter.title.length > 0)
-          .map(({ node: post }) => (
-            <Content className="blog-post-preview" key={post.id}>
-              <Title tag="h2" isMarginless>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </Title>
-              <p>{post.frontmatter.date}</p>
-              <p>{post.excerpt}</p>
-            </Content>
-          ))}
-      </Container>
+      <NavigationHeader />
+      <Section>
+        <Container>
+          {posts
+            .filter(({ node: post }) => post.frontmatter.title.length > 0)
+            .map(({ node: post }) => (
+              <Box key={post.id}>
+                <Heading>{post.frontmatter.date}</Heading>
+                <Subtitle>
+                  <Link to={post.frontmatter.path}>
+                    {post.frontmatter.title}
+                  </Link>
+                </Subtitle>
+                <Content>{post.excerpt}</Content>
+              </Box>
+            ))}
+        </Container>
+      </Section>
     </Layout>
   );
 };
-
 export default IndexPage;
 
 export const pageQuery = graphql`
