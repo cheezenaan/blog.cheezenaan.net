@@ -1,9 +1,12 @@
 # blog.cheezenaan.net
 
-Based on:
+My private blog based on:
 
-- Gatsby.js w/ gatsby-starter-default
-- TypeScript
+- [GatsbyJS](https://www.gatsbyjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React.js](https://reactjs.org/)
+- [GraphQL](https://graphql.org/)
+- [Bulma](https://bulma.io/)
 
 ## Introduction
 
