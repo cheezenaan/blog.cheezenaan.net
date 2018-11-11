@@ -1,5 +1,8 @@
 # blog.cheezenaan.net
 
+[![CircleCI](https://circleci.com/gh/cheezenaan/blog/tree/master.svg?style=svg)](https://circleci.com/gh/cheezenaan/blog/tree/master)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 My private blog based on:
 
 - [GatsbyJS](https://www.gatsbyjs.org/)
