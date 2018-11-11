@@ -17,7 +17,7 @@ export interface ProviderProps {
   siteTitle: string;
 }
 
-export const SiteMetadataProvider = ({ children }: Props) => (
+export const SiteMetadataProvider: React.SFC<Props> = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {

@@ -10,7 +10,7 @@ import React from 'react';
 
 import { SiteMetadataProvider } from '../providers/site-metadata';
 
-export const Footer = () => (
+export const Footer: React.SFC = () => (
   <SiteMetadataProvider>
     {providerProps => (
       <BloomerFooter id="footer">

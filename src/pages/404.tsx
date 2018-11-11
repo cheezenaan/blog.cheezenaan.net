@@ -4,7 +4,7 @@ import * as React from 'react';
 import { NavigationHeader } from '../components/organisms/navigation-header';
 import { Layout } from '../components/templates/layout';
 
-const NotFoundPage = () => (
+const NotFoundPage: React.SFC = () => (
   <Layout>
     <NavigationHeader />
     <Section>

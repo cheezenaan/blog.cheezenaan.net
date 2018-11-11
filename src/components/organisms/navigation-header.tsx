@@ -12,7 +12,9 @@ type Props = ProviderProps & {
 };
 
 // TODO: BlogPost のときだけ Navbar の classname に "has-shadow" を足したいので classNames を入れる
-export const NavigationHeader = (props: Omit<Props, keyof ProviderProps>) => (
+export const NavigationHeader: React.SFC<
+  Omit<Props, keyof ProviderProps>
+> = props => (
   <SiteMetadataProvider>
     {providerProps => (
       <header>

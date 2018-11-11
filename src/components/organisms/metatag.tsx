@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import { SiteMetadataProvider } from '../providers/site-metadata';
 
-export const Metatag = () => (
+export const Metatag: React.SFC = () => (
   <SiteMetadataProvider>
     {providerProps => (
       <Helmet
