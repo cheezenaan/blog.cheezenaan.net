@@ -1,3 +1,4 @@
+import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Container,
@@ -8,6 +9,8 @@ import {
   LevelLeft,
 } from 'bloomer';
 import * as React from 'react';
+
+import { Hoverable } from '../providers/hoverable';
 
 export const Footer: React.SFC = () => (
   <BloomerFooter id="footer">
@@ -24,29 +27,56 @@ export const Footer: React.SFC = () => (
           </a>
           , a blazing fast modern site generator for React.
         </p>
-        <Level isMobile>
-          <LevelLeft>
-            <LevelItem>© 2018. cheezenaan</LevelItem>
-            <LevelItem
-              href="https://twitter.com/cheezenaan"
-              target="_blank"
-              rel="noopener noreferrer"
-              /* TODO: マウスホバー時は本来のリンク色を出したい */
-              style={{ color: 'inherit' }}
-            >
-              <FontAwesomeIcon icon={['fab', 'twitter']} />
-            </LevelItem>
-            <LevelItem
-              href="https://github.com/cheezenaan"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'inherit' }}
-            >
-              <FontAwesomeIcon icon={['fab', 'github']} />
-            </LevelItem>
-          </LevelLeft>
-        </Level>
+        <p>© 2018. cheezenaan</p>
       </Content>
+      <Level isMobile>
+        <LevelLeft>
+          <LevelItem>
+            {/* TODO: SocialAccountIconLink みたいな名前で括りだす */}
+            <Hoverable>
+              {({ isHovered, toggleHovered }) => (
+                <a
+                  href="https://twitter.com/cheezenaan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  /* TODO: classname の切り替えに classNames を使いたい */
+                  className={isHovered ? 'has-text-link' : 'has-text-dark'}
+                  onMouseEnter={toggleHovered}
+                  onMouseLeave={toggleHovered}
+                >
+                  <FontAwesomeIcon
+                    icon={findIconDefinition({
+                      prefix: 'fab',
+                      iconName: 'twitter',
+                    })}
+                  />
+                </a>
+              )}
+            </Hoverable>
+          </LevelItem>
+          <LevelItem>
+            <Hoverable>
+              {({ isHovered, toggleHovered }) => (
+                <a
+                  href="https://github.com.com/cheezenaan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={isHovered ? 'has-text-link' : 'has-text-dark'}
+                  onMouseEnter={toggleHovered}
+                  onMouseLeave={toggleHovered}
+                >
+                  <FontAwesomeIcon
+                    icon={findIconDefinition({
+                      prefix: 'fab',
+                      iconName: 'github',
+                    })}
+                  />
+                </a>
+              )}
+            </Hoverable>
+          </LevelItem>
+        </LevelLeft>
+      </Level>
     </Container>
   </BloomerFooter>
 );
