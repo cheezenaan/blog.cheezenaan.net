@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Column,
   Columns,
@@ -44,6 +45,25 @@ export const Footer: React.SFC = () => (
                 </a>
               </p>
             </Content>
+            <Columns>
+              <Column isSize={1}>
+                <a
+                  href="https://twitter.com/cheezenaan"
+                  /* TODO: マウスホバー時は本来のリンク色を出したい */
+                  style={{ color: 'inherit' }}
+                >
+                  <FontAwesomeIcon icon={['fab', 'twitter']} />
+                </a>
+              </Column>
+              <Column isSize={1}>
+                <a
+                  href="http://github.com/cheezenaan"
+                  style={{ color: 'inherit' }}
+                >
+                  <FontAwesomeIcon icon={['fab', 'github']} />
+                </a>
+              </Column>
+            </Columns>
           </Content>
         </Container>
       </BloomerFooter>
