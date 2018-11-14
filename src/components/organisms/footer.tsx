@@ -10,7 +10,7 @@ import {
 } from 'bloomer';
 import * as React from 'react';
 
-import { Hoverable } from '../providers/hoverable';
+import { Hoverable, HoverableProps } from '../providers/hoverable';
 
 export const Footer: React.SFC = () => (
   <BloomerFooter id="footer">
@@ -34,7 +34,7 @@ export const Footer: React.SFC = () => (
           <LevelItem>
             {/* TODO: SocialAccountIconLink みたいな名前で括りだす */}
             <Hoverable>
-              {({ isHovered, toggleHovered }) => (
+              {({ isHovered, toggleHovered }: HoverableProps) => (
                 <a
                   href="https://twitter.com/cheezenaan"
                   target="_blank"
@@ -56,7 +56,7 @@ export const Footer: React.SFC = () => (
           </LevelItem>
           <LevelItem>
             <Hoverable>
-              {({ isHovered, toggleHovered }) => (
+              {({ isHovered, toggleHovered }: HoverableProps) => (
                 <a
                   href="https://github.com.com/cheezenaan"
                   target="_blank"

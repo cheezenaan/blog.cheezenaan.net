@@ -1,12 +1,12 @@
 import * as React from 'react';
 
+export interface HoverableProps {
+  isHovered: boolean;
+  toggleHovered: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
 interface Props {
-  children: (
-    props: {
-      isHovered: boolean;
-      toggleHovered: (e: React.MouseEvent<HTMLElement>) => void;
-    }
-  ) => React.ReactNode;
+  children: (props: any) => React.ReactNode;
 }
 
 const initialStyle = { isHovered: false };
@@ -17,7 +17,7 @@ export class Hoverable extends React.Component<Props, State> {
 
   private toggleHovered = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    this.setState({ isHovered: !this.state.isHovered });
+    this.setState(prevState => ({ isHovered: !prevState.isHovered }));
   };
 
   public render() {
