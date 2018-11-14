@@ -10,7 +10,7 @@ interface SiteMetadata {
 }
 
 interface Props {
-  children: (props: ProviderProps) => React.ReactNode;
+  children: RenderCallback<ProviderProps>;
 }
 
 export interface ProviderProps {
