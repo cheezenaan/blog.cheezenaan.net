@@ -6,7 +6,7 @@ interface HoverableProps {
 }
 
 interface Props {
-  children: RenderCallback<HoverableProps>;
+  render: RenderCallback<HoverableProps>;
 }
 
 const initialStyle = { isHovered: false };
@@ -21,7 +21,7 @@ export class Hoverable extends React.Component<Props, State> {
   };
 
   public render() {
-    const { children } = this.props;
+    const { render } = this.props;
     const { isHovered } = this.state;
 
     const renderProps = {
@@ -29,6 +29,6 @@ export class Hoverable extends React.Component<Props, State> {
       toggleHovered: this.toggleHovered,
     };
 
-    return children && children({ ...renderProps });
+    return render({ ...renderProps });
   }
 }

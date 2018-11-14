@@ -15,8 +15,8 @@ type Props = ProviderProps & {
 export const NavigationHeader: React.SFC<
   Omit<Props, keyof ProviderProps>
 > = props => (
-  <SiteMetadataProvider>
-    {({ siteTitle }) => (
+  <SiteMetadataProvider
+    render={({ siteTitle }) => (
       <header>
         <Navbar className="is-spaced has-shadow">
           <Container>
@@ -31,5 +31,5 @@ export const NavigationHeader: React.SFC<
         </Navbar>
       </header>
     )}
-  </SiteMetadataProvider>
+  />
 );
