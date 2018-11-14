@@ -16,14 +16,14 @@ export const NavigationHeader: React.SFC<
   Omit<Props, keyof ProviderProps>
 > = props => (
   <SiteMetadataProvider>
-    {providerProps => (
+    {({ siteTitle }) => (
       <header>
         <Navbar className="is-spaced has-shadow">
           <Container>
             <NavbarBrand>
               <NavbarItem>
                 <Title tag={props.titleTag} isSize={4}>
-                  <Link to="/">{providerProps.siteTitle}</Link>
+                  <Link to="/">{siteTitle}</Link>
                 </Title>
               </NavbarItem>
             </NavbarBrand>

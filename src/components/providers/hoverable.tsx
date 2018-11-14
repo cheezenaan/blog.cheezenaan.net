@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-export interface HoverableProps {
+interface HoverableProps {
   isHovered: boolean;
   toggleHovered: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 interface Props {
-  children: (props: any) => React.ReactNode;
+  children: RenderCallback<HoverableProps>;
 }
 
 const initialStyle = { isHovered: false };
