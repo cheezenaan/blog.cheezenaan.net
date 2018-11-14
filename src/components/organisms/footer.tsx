@@ -58,7 +58,7 @@ export const Footer: React.SFC = () => (
             <Hoverable>
               {({ isHovered, toggleHovered }) => (
                 <a
-                  href="https://github.com.com/cheezenaan"
+                  href="https://github.com/cheezenaan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={isHovered ? 'has-text-link' : 'has-text-dark'}
