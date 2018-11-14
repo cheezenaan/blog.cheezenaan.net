@@ -33,8 +33,8 @@ export const Footer: React.SFC = () => (
         <LevelLeft>
           <LevelItem>
             {/* TODO: SocialAccountIconLink みたいな名前で括りだす */}
-            <Hoverable>
-              {({ isHovered, toggleHovered }) => (
+            <Hoverable
+              render={({ isHovered, toggleHovered }) => (
                 <a
                   href="https://twitter.com/cheezenaan"
                   target="_blank"
@@ -52,11 +52,11 @@ export const Footer: React.SFC = () => (
                   />
                 </a>
               )}
-            </Hoverable>
+            />
           </LevelItem>
           <LevelItem>
-            <Hoverable>
-              {({ isHovered, toggleHovered }) => (
+            <Hoverable
+              render={({ isHovered, toggleHovered }) => (
                 <a
                   href="https://github.com/cheezenaan"
                   target="_blank"
@@ -73,7 +73,7 @@ export const Footer: React.SFC = () => (
                   />
                 </a>
               )}
-            </Hoverable>
+            />
           </LevelItem>
         </LevelLeft>
       </Level>

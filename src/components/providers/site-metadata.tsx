@@ -10,14 +10,14 @@ interface SiteMetadata {
 }
 
 interface Props {
-  children: RenderCallback<ProviderProps>;
+  render: RenderCallback<ProviderProps>;
 }
 
 export interface ProviderProps {
   siteTitle: string;
 }
 
-export const SiteMetadataProvider: React.SFC<Props> = ({ children }) => (
+export const SiteMetadataProvider: React.SFC<Props> = ({ render }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -32,7 +32,7 @@ export const SiteMetadataProvider: React.SFC<Props> = ({ children }) => (
       const { siteMetadata } = data.site;
       const renderProps = { siteTitle: siteMetadata.title };
 
-      return children && children({ ...renderProps });
+      return render({ ...renderProps });
     }}
   />
 );
