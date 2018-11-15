@@ -54,6 +54,6 @@
     "stylelint-config-standard": "18.2.0",
     "stylelint-prettier": "1.0.4",
     "typescript": "3.1.6",
-    "typescript-eslint-parser": "21.0.0"
+    "typescript-eslint-parser": "21.0.1"
   }
 }
