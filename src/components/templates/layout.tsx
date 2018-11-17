@@ -14,17 +14,17 @@ import { SiteMetadataProvider } from '../providers/site-metadata';
 library.add(fab);
 
 interface Props {
-  pageTitle?: string;
   titleTag?: keyof React.ReactHTML;
   children: React.ReactNode;
 }
 
-export const Layout: React.SFC<Props> = ({ pageTitle, titleTag, children }) => (
+export const Layout: React.SFC<Props> = ({ titleTag, children }) => (
   <SiteMetadataProvider
     render={({ siteTitle }) => (
       <>
         <Helmet
-          title={pageTitle ? `${pageTitle} - ${siteTitle}` : siteTitle}
+          defaultTitle={siteTitle}
+          titleTemplate={`%s - ${siteTitle}`}
           meta={[{ name: 'description', content: 'Private blog' }]}
         >
           <html lang="ja" />

@@ -1,6 +1,7 @@
 import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { Layout } from '../templates/layout';
 
@@ -23,7 +24,8 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout pageTitle={post.frontmatter.title} titleTag="header">
+    <Layout titleTag="header">
+      <Helmet title={post.frontmatter.title} />
       <Section>
         <Container>
           <Heading>{post.frontmatter.date}</Heading>
