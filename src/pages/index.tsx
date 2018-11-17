@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Layout } from '../components/templates/layout';
 
 interface Post {
-  node: {
+  post: {
     excerpt: string;
     id: number;
     frontmatter: {
@@ -19,31 +19,30 @@ interface Post {
 interface Props {
   data: {
     allMarkdownRemark: {
-      edges: Post[];
+      posts: Post[];
     };
   };
 }
 
 const IndexPage: React.SFC<Props> = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark;
+  const { posts } = data.allMarkdownRemark;
+  const filteredPosts = posts.filter(
+    ({ post }) => post.frontmatter.title.length > 0
+  );
 
   return (
     <Layout isRoot>
       <Section>
         <Container>
-          {posts
-            .filter(({ node: post }) => post.frontmatter.title.length > 0)
-            .map(({ node: post }) => (
-              <Box key={post.id}>
-                <Heading>{post.frontmatter.date}</Heading>
-                <Subtitle>
-                  <Link to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </Link>
-                </Subtitle>
-                <Content>{post.excerpt}</Content>
-              </Box>
-            ))}
+          {filteredPosts.map(({ post }) => (
+            <Box key={post.id}>
+              <Heading>{post.frontmatter.date}</Heading>
+              <Subtitle>
+                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+              </Subtitle>
+              <Content>{post.excerpt}</Content>
+            </Box>
+          ))}
         </Container>
       </Section>
     </Layout>
@@ -54,8 +53,8 @@ export default IndexPage;
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
+      posts: edges {
+        post: node {
           excerpt(pruneLength: 280)
           id
           frontmatter {
