@@ -20,12 +20,19 @@ interface Props {
 
 export const Layout: React.SFC<Props> = ({ children, isRoot }) => (
   <SiteMetadataProvider
-    render={({ siteTitle }) => (
+    render={({ siteTitle, siteUrl }) => (
       <>
         <Helmet
           defaultTitle={siteTitle}
           titleTemplate={`%s - ${siteTitle}`}
-          meta={[{ name: 'description', content: 'Private blog' }]}
+          meta={[
+            { property: 'og:title', content: siteTitle }, // TODO:
+            { property: 'og:url', content: siteUrl }, // TODO:
+            { name: 'description', content: 'Private blog' }, // TODO:
+            { property: 'og:type', content: 'blog' },
+            { property: 'twitter:card', content: 'summary' },
+            { property: 'twitter:site', content: '@cheezenaan' }, // TODO:
+          ]}
         >
           <html lang="ja" />
         </Helmet>

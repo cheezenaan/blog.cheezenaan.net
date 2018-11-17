@@ -1,38 +1,40 @@
 import { graphql, StaticQuery } from 'gatsby';
 import * as React from 'react';
 
-interface SiteMetadata {
+interface Site {
   site: {
-    siteMetadata: {
-      title: string;
-    };
+    siteMetadata: SiteMetadata;
   };
 }
 
-interface Props {
-  render: RenderCallback<ProviderProps>;
+interface SiteMetadata {
+  siteTitle: string;
+  siteUrl: string;
 }
 
-interface ProviderProps {
-  siteTitle: string;
+interface Props {
+  render: RenderCallback<SiteMetadata>;
 }
 
 export const SiteMetadataProvider: React.SFC<Props> = ({ render }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={(data: SiteMetadata) => {
-      const { siteMetadata } = data.site;
-      const renderProps = { siteTitle: siteMetadata.title };
+    query={SiteMetadataQuery}
+    render={({ site }: Site) => {
+      const { siteMetadata } = site;
+      const renderProps = siteMetadata;
 
       return render({ ...renderProps });
     }}
   />
 );
+
+const SiteMetadataQuery = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        siteTitle: title
+        siteUrl: url
+      }
+    }
+  }
+`;

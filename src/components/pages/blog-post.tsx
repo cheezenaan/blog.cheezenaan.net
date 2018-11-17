@@ -1,5 +1,6 @@
 import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
+import path from 'path';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -18,15 +19,39 @@ interface Post {
 interface Props {
   data: {
     markdownRemark: Post;
+    site: {
+      siteMetadata: {
+        siteTitle: string;
+        siteUrl: string;
+      };
+    };
   };
 }
 
+// TODO: siteMetadata の情報を BlogPost から隔離する
 export const BlogPost: React.SFC<Props> = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const {
+    markdownRemark: post,
+    site: { siteMetadata },
+  } = data;
+  const { siteTitle, siteUrl } = siteMetadata;
 
   return (
     <Layout>
-      <Helmet title={post.frontmatter.title} />
+      <Helmet
+        title={post.frontmatter.title}
+        meta={[
+          {
+            property: 'og:title',
+            content: `${post.frontmatter.title} - ${siteTitle}`,
+          },
+          {
+            property: 'og:url',
+            content: `${path.join(siteUrl, post.frontmatter.path)}`,
+          },
+          { property: 'description', content: post.excerpt },
+        ]}
+      />
       <Section>
         <Container>
           <Heading>{post.frontmatter.date}</Heading>
@@ -48,6 +73,12 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+      }
+    }
+    site {
+      siteMetadata {
+        siteTitle: title
+        siteUrl: url
       }
     }
   }
