@@ -11,9 +11,13 @@ import { Metatag } from '../organisms/metatag';
 // Use FontAwesome icons in React components
 library.add(fab);
 
-export const Layout: React.SFC = ({ children }) => (
+interface Props {
+  pageTitle?: string;
+  children: React.ReactNode;
+}
+export const Layout: React.SFC<Props> = ({ pageTitle, children }) => (
   <>
-    <Metatag />
+    <Metatag pageTitle={pageTitle} />
     {children}
     <Footer />
   </>

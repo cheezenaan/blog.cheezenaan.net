@@ -24,7 +24,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout pageTitle={post.frontmatter.title}>
       <NavigationHeader titleTag="header" />
       <Section>
         <Container>
