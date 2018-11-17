@@ -8,6 +8,7 @@ import * as React from 'react';
 import { Footer } from '../organisms/footer';
 import { Metatag } from '../organisms/metatag';
 import { NavigationHeader } from '../organisms/navigation-header';
+import { SiteMetadataProvider } from '../providers/site-metadata';
 
 // Use FontAwesome icons in React components
 library.add(fab);
@@ -19,12 +20,14 @@ interface Props {
 }
 
 export const Layout: React.SFC<Props> = ({ pageTitle, titleTag, children }) => (
-  <>
-    <Metatag pageTitle={pageTitle} />
-    <>
-      <NavigationHeader titleTag={titleTag} />
-      {children}
-      <Footer />
-    </>
-  </>
+  <SiteMetadataProvider
+    render={({ siteTitle }) => (
+      <>
+        <Metatag siteTitle={siteTitle} pageTitle={pageTitle} />
+        <NavigationHeader siteTitle={siteTitle} titleTag={titleTag} />
+        {children}
+        <Footer />
+      </>
+    )}
+  />
 );
