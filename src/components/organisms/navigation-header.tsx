@@ -4,17 +4,17 @@ import * as React from 'react';
 
 interface Props {
   siteTitle: string;
-  titleTag?: keyof React.ReactHTML;
+  isRoot?: boolean;
 }
 
 // TODO: BlogPost のときだけ Navbar の classname に "has-shadow" を足したいので classNames を入れる
-export const NavigationHeader: React.SFC<Props> = ({ siteTitle, titleTag }) => (
+export const NavigationHeader: React.SFC<Props> = ({ siteTitle, isRoot }) => (
   <header>
     <Navbar className="is-spaced has-shadow">
       <Container>
         <NavbarBrand>
           <NavbarItem>
-            <Title tag={titleTag} isSize={4}>
+            <Title tag={isRoot ? undefined : 'header'} isSize={4}>
               <Link to="/">{siteTitle}</Link>
             </Title>
           </NavbarItem>

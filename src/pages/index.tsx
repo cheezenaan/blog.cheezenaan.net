@@ -28,7 +28,7 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <Layout>
+    <Layout isRoot>
       <Section>
         <Container>
           {posts

@@ -14,11 +14,11 @@ import { SiteMetadataProvider } from '../providers/site-metadata';
 library.add(fab);
 
 interface Props {
-  titleTag?: keyof React.ReactHTML;
   children: React.ReactNode;
+  isRoot?: boolean;
 }
 
-export const Layout: React.SFC<Props> = ({ titleTag, children }) => (
+export const Layout: React.SFC<Props> = ({ children, isRoot }) => (
   <SiteMetadataProvider
     render={({ siteTitle }) => (
       <>
@@ -29,7 +29,7 @@ export const Layout: React.SFC<Props> = ({ titleTag, children }) => (
         >
           <html lang="ja" />
         </Helmet>
-        <NavigationHeader siteTitle={siteTitle} titleTag={titleTag} />
+        <NavigationHeader siteTitle={siteTitle} isRoot={isRoot} />
         {children}
         <Footer />
       </>
