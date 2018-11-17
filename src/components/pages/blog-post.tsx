@@ -12,6 +12,7 @@ interface Post {
     title: string;
   };
   html: string;
+  excerpt: string;
 }
 
 interface Props {
@@ -42,6 +43,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      excerpt(pruneLength: 140, truncate: true)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
