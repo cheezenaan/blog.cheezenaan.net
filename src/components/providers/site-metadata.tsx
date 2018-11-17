@@ -13,7 +13,7 @@ interface Props {
   render: RenderCallback<ProviderProps>;
 }
 
-export interface ProviderProps {
+interface ProviderProps {
   siteTitle: string;
 }
 

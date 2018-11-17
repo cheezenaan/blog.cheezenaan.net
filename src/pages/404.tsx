@@ -1,15 +1,13 @@
-import { Container, Content, Section, Subtitle } from 'bloomer';
+import { Container, Content, Section, Title } from 'bloomer';
 import * as React from 'react';
 
-import { NavigationHeader } from '../components/organisms/navigation-header';
 import { Layout } from '../components/templates/layout';
 
 const NotFoundPage: React.SFC = () => (
   <Layout>
-    <NavigationHeader />
     <Section>
       <Container>
-        <Subtitle tag="h2">NOT FOUND</Subtitle>
+        <Title>NOT FOUND</Title>
         <Content>
           You just hit a route that doesn&#39;t exist... the sadness.
         </Content>
