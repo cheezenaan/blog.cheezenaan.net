@@ -2,7 +2,6 @@ import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
-import { NavigationHeader } from '../components/organisms/navigation-header';
 import { Layout } from '../components/templates/layout';
 
 interface Post {
@@ -30,7 +29,6 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <NavigationHeader />
       <Section>
         <Container>
           {posts

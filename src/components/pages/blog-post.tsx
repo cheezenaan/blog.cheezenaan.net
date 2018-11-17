@@ -2,7 +2,6 @@ import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
-import { NavigationHeader } from '../organisms/navigation-header';
 import { Layout } from '../templates/layout';
 
 interface Post {
@@ -24,8 +23,7 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout pageTitle={post.frontmatter.title}>
-      <NavigationHeader titleTag="header" />
+    <Layout pageTitle={post.frontmatter.title} titleTag="header">
       <Section>
         <Container>
           <Heading>{post.frontmatter.date}</Heading>

@@ -7,18 +7,24 @@ import * as React from 'react';
 
 import { Footer } from '../organisms/footer';
 import { Metatag } from '../organisms/metatag';
+import { NavigationHeader } from '../organisms/navigation-header';
 
 // Use FontAwesome icons in React components
 library.add(fab);
 
 interface Props {
   pageTitle?: string;
+  titleTag?: keyof React.ReactHTML;
   children: React.ReactNode;
 }
-export const Layout: React.SFC<Props> = ({ pageTitle, children }) => (
+
+export const Layout: React.SFC<Props> = ({ pageTitle, titleTag, children }) => (
   <>
     <Metatag pageTitle={pageTitle} />
-    {children}
-    <Footer />
+    <>
+      <NavigationHeader titleTag={titleTag} />
+      {children}
+      <Footer />
+    </>
   </>
 );
