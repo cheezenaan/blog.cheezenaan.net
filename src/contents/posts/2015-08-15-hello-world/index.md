@@ -19,6 +19,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">…ますか…聞こえていますか…のぞみぞ難民たちよ…味ついてておいしいです…いまあなたの心に直接語りかけています…京アニショップの『リズと青い鳥』 Blu-ray 予約受付は11月7日までです…購入特典「山田尚子監督イラストサイン色紙」を逃してはいけません…ハッピーアイスクリーム… <a href="https://twitter.com/hashtag/%E3%83%AA%E3%82%BA%E3%81%A8%E9%9D%92%E3%81%84%E9%B3%A5?src=hash&amp;ref_src=twsrc%5Etfw">#リズと青い鳥</a></p>&mdash; やがて cheezenaan になる (@cheezenaan) <a href="https://twitter.com/cheezenaan/status/1060147637750353921?ref_src=twsrc%5Etfw">2018年11月7日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+## 画像を貼るよ
+
+![コンビニのゆでたまごです](egg_yudetamago.png)
+
+味ついてておいしいです。
+
 ## Code Syntax
 
 `const sound = 'euphonium'; console.log({ sound }); // => { sound: 'euphonium' }`
