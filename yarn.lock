@@ -5246,7 +5246,7 @@ find-versions@^3.0.0:
     array-uniq "^2.0.0"
     semver-regex "^2.0.0"
 
-firebase-tools@^6.1.0:
+firebase-tools@6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-6.1.0.tgz#e57dd00f2e748324804c88c711a1119e25698ca9"
   dependencies:
