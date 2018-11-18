@@ -2,6 +2,7 @@ import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
+import { Ogp } from '../components/organisms/ogp';
 import { Layout } from '../components/templates/layout';
 
 interface Post {
@@ -32,6 +33,7 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout isRoot>
+      <Ogp isRoot />
       <Section>
         <Container>
           {filteredPosts.map(({ post }) => (

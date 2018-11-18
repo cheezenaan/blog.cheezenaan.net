@@ -1,10 +1,12 @@
 import { Container, Content, Section, Title } from 'bloomer';
 import * as React from 'react';
 
+import { Ogp } from '../components/organisms/ogp';
 import { Layout } from '../components/templates/layout';
 
 const NotFoundPage: React.SFC = () => (
   <Layout>
+    <Ogp />
     <Section>
       <Container>
         <Title>NOT FOUND</Title>

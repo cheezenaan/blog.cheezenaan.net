@@ -1,9 +1,8 @@
 import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
-import path from 'path';
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 
+import { Ogp } from '../organisms/ogp';
 import { Layout } from '../templates/layout';
 
 interface Post {
@@ -19,38 +18,18 @@ interface Post {
 interface Props {
   data: {
     markdownRemark: Post;
-    site: {
-      siteMetadata: {
-        siteTitle: string;
-        siteUrl: string;
-      };
-    };
   };
 }
 
-// TODO: siteMetadata の情報を BlogPost から隔離する
 export const BlogPost: React.SFC<Props> = ({ data }) => {
-  const {
-    markdownRemark: post,
-    site: { siteMetadata },
-  } = data;
-  const { siteTitle, siteUrl } = siteMetadata;
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <Helmet
+      <Ogp
         title={post.frontmatter.title}
-        meta={[
-          {
-            property: 'og:title',
-            content: `${post.frontmatter.title} - ${siteTitle}`,
-          },
-          {
-            property: 'og:url',
-            content: `${path.join(siteUrl, post.frontmatter.path)}`,
-          },
-          { property: 'description', content: post.excerpt },
-        ]}
+        path={post.frontmatter.path}
+        description={post.excerpt}
       />
       <Section>
         <Container>
@@ -73,12 +52,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-      }
-    }
-    site {
-      siteMetadata {
-        siteTitle: title
-        siteUrl: url
       }
     }
   }

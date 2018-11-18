@@ -23,6 +23,7 @@ export const Layout: React.SFC<Props> = ({ children, isRoot }) => (
     <Helmet
       defaultTitle={siteMetadata.title}
       titleTemplate={`%s - ${siteMetadata.title}`}
+      meta={[{ name: 'description', content: 'something awesome' }]}
     >
       <html lang="ja" />
     </Helmet>
