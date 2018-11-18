@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 
 import { siteMetadata } from '../../../gatsby-config';
 import { Footer } from '../organisms/footer';
-import { NavigationHeader } from '../organisms/navigation-header';
+import { Header } from '../organisms/header';
 
 // Use FontAwesome icons in React components
 library.add(fab);
@@ -28,7 +28,7 @@ export const Layout: React.SFC<Props> = ({ children, isRoot }) => (
       <html lang="ja" />
     </Helmet>
     <>
-      <NavigationHeader siteTitle={siteMetadata.title} isRoot={isRoot} />
+      <Header siteTitle={siteMetadata.title} isRoot={isRoot} />
       {children}
       <Footer />
     </>
