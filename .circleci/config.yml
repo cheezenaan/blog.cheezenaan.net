@@ -26,9 +26,26 @@ jobs:
           root: ~/repo
           paths:
             - public/
+            - node_modules/
+            - package.json
+            - firebase.json
+  deploy:
+    <<: *default_settings
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: deploy to firbase
+          command: $(yarn bin)/firebase deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
 
 workflows:
   version: 2
-  build:
+  build_and_deploy:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
