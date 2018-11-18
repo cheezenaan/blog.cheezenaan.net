@@ -33,6 +33,11 @@ export const Ogp: React.SFC<Props> = ({ isRoot, title, path, description }) => {
           content: `${path ? `${siteUrl.concat(path)}` : siteUrl}`,
         },
         {
+          property: 'og:image',
+          content:
+            'https://www.gravatar.com/avatar/544edf5a0f3541a800f0b2911a3176df.jpg?size=400',
+        },
+        {
           property: 'og:description',
           content: description || 'something awesome',
         },
