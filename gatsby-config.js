@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'blog.cheezenaan.net',
+    url: 'https://blog.cheezenaan.net',
   },
   plugins: [
     'gatsby-plugin-catch-links',

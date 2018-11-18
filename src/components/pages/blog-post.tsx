@@ -1,8 +1,8 @@
 import { Container, Content, Heading, Section, Title } from 'bloomer';
 import { graphql } from 'gatsby';
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 
+import { Ogp } from '../organisms/ogp';
 import { Layout } from '../templates/layout';
 
 interface Post {
@@ -12,6 +12,7 @@ interface Post {
     title: string;
   };
   html: string;
+  excerpt: string;
 }
 
 interface Props {
@@ -25,7 +26,11 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={post.frontmatter.title} />
+      <Ogp
+        title={post.frontmatter.title}
+        path={post.frontmatter.path}
+        description={post.excerpt}
+      />
       <Section>
         <Container>
           <Heading>{post.frontmatter.date}</Heading>
@@ -42,6 +47,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      excerpt(pruneLength: 140, truncate: true)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

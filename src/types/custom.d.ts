@@ -1,3 +1,12 @@
-declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 declare type RenderCallback<T> = (data: T) => React.ReactNode;
+
+declare module '*/gatsby-config' {
+  interface GatsbyConfig {
+    siteMetadata: {
+      title: string;
+      url: string;
+    };
+  }
+  const value: GatsbyConfig;
+  export = value;
+}

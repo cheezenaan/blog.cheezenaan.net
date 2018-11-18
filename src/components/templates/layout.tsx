@@ -6,9 +6,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+import { siteMetadata } from '../../../gatsby-config';
 import { Footer } from '../organisms/footer';
 import { NavigationHeader } from '../organisms/navigation-header';
-import { SiteMetadataProvider } from '../providers/site-metadata';
 
 // Use FontAwesome icons in React components
 library.add(fab);
@@ -19,20 +19,18 @@ interface Props {
 }
 
 export const Layout: React.SFC<Props> = ({ children, isRoot }) => (
-  <SiteMetadataProvider
-    render={({ siteTitle }) => (
-      <>
-        <Helmet
-          defaultTitle={siteTitle}
-          titleTemplate={`%s - ${siteTitle}`}
-          meta={[{ name: 'description', content: 'Private blog' }]}
-        >
-          <html lang="ja" />
-        </Helmet>
-        <NavigationHeader siteTitle={siteTitle} isRoot={isRoot} />
-        {children}
-        <Footer />
-      </>
-    )}
-  />
+  <>
+    <Helmet
+      defaultTitle={siteMetadata.title}
+      titleTemplate={`%s - ${siteMetadata.title}`}
+      meta={[{ name: 'description', content: 'something awesome' }]}
+    >
+      <html lang="ja" />
+    </Helmet>
+    <>
+      <NavigationHeader siteTitle={siteMetadata.title} isRoot={isRoot} />
+      {children}
+      <Footer />
+    </>
+  </>
 );
