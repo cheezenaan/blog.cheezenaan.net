@@ -1,7 +1,7 @@
 # blog.cheezenaan.net
 
 [![CircleCI](https://circleci.com/gh/cheezenaan/blog/tree/master.svg?style=svg)](https://circleci.com/gh/cheezenaan/blog/tree/master)
-[![CodeFactor](https://www.codefactor.io/repository/github/cheezenaan/blog/badge?style=plastic)](https://www.codefactor.io/repository/github/cheezenaan/blog)
+[![CodeFactor](https://www.codefactor.io/repository/github/cheezenaan/blog/badge)](https://www.codefactor.io/repository/github/cheezenaan/blog)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 My private blog based on:
@@ -11,6 +11,7 @@ My private blog based on:
 - [React.js](https://reactjs.org/)
 - [GraphQL](https://graphql.org/)
 - [Bulma](https://bulma.io/)
+- [Firebase Hosting](https://firebase.google.com/products/hosting)
 
 ## Introduction
 
