@@ -16,7 +16,7 @@ path: /playback-2017
 
 ## 音楽素材販売対応
 
-[http://nlab.itmedia.co.jp/nl/articles/1710/16/news098.html:embed:cite]
+[デジタル素材販売サイト「pixta」が音楽素材の提供を開始 動画制作に必要な bgm・効果音・歌を販売 - ねとらぼ](http://nlab.itmedia.co.jp/nl/articles/1710/16/news098.html)
 
 - 写真、イラスト、動画につづく第 4 の素材販売
 - 具体的には、素材詳細ページならびに検索結果ページの改修を行っていた
@@ -33,7 +33,7 @@ path: /playback-2017
 
 詳細は以下のブログを読んでくれ…と言いたいところだけど、簡単にまとめるとだいたい以下の通り。
 
-[http://texta.pixta.jp/entry/2017/10/24/120500:embed:cite]
+[音楽素材販売プロジェクトで React を小さく導入した話 - てくすた](https://texta.pixta.jp/entry/2017/10/24/120500)
 
 - 既存の検索結果ページに React + Redux + Flow が導入されていたが「今回のスコープなら Redux いらなくね」となり、 React + Flow で組み込み
 - ES2017 + React + Flow によるフロントエンド JavaScript 開発の前線を肌で体感するいい機会に
@@ -70,13 +70,13 @@ path: /playback-2017
 
 この数年で社内の人員が急増したこともあり、開発チームで保有している知識やノウハウをうまく全社に展開できたら、ハッピーになるんじゃないの…という思いがあっていろいろやっていた。具体的にはスクラム本の読書会や、Redash を用いた社内 SQL 勉強会の企画・運営など。このあたりの話もブログにまとめているので読んでもらえると。
 
-[http://texta.pixta.jp/entry/2017/07/19/115000:embed:cite]
+[非エンジニアに SQL を布教して社内に起きた明るい変化 - てくすた](https://texta.pixta.jp/entry/2017/07/19/115000)
 
 ## 社内ブログ執筆
 
 ひょんなことから社内ブログを書く機会をもらい、気がつけば年内に 3 本公開していた。
 
-[http://texta.pixta.jp/search?q=id%3Acheezenaan:embed:cite]
+[https://texta.pixta.jp/archive/author/cheezenaan](https://texta.pixta.jp/archive/author/cheezenaan)
 
 - 自分の経験や知見を文章にまとめて世に送り出す歓びや楽しみを知ってしまう
 - 「これブログにまとめたら面白そうじゃない？」という視点から日々の業務を取り組むようになった
@@ -90,4 +90,4 @@ path: /playback-2017
 - 腕を磨きつづける
 - 人との縁を大事にする
 
-の 3+1 つを意識しながら過ごしていきたい。
+の 3 + 1 つを意識しながら過ごしていきたい。

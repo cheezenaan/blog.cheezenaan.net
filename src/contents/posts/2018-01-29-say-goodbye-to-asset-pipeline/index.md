@@ -14,16 +14,15 @@ path: /say-boodbye-to-asset-pipeline
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Rails チュートリアルのサンプルアプリから app/assets/ 以下を完全に葬り去ることに成功した</p>&mdash; cheezenaan🍺🙅 (@cheezenaan) <a href="https://twitter.com/cheezenaan/status/957509562902364161?ref_src=twsrc%5Etfw">2018年1月28日</a></blockquote>
 
-
 よくある Rails アプリケーションから JavaScript のビルドを webpack に移譲した前回に続いて、今回はスタイルシートや画像ファイルといった静的アセットもすべて webpack の管理下に置くことにした。これによりフロントエンド管理を Rails が提供する Asset Pipeline のしくみから webpack に完全移行できた(と思っている)。
 
 これまでのあらすじは以下のリンクから。
 
-[http://cheezenaan.hatenablog.jp/entry/2018/01/22/214520:embed:cite]
+[https://blog.cheezenaan.net/rails-with-webpack-on-docker]
 
 ## Tl;dr
 
-[https://github.com/cheezenaan-sandbox/sample_app_rev4/pull/18:embed:cite]
+[Build stylesheets through webpack by cheezenaan · Pull Request #18 · cheezenaan-sandbox/sample_app_rev4](https://github.com/cheezenaan-sandbox/sample_app_rev4/pull/18)
 
 例に漏れず Pull Request を作成しているので、物好きな人はコミットを追ってたらいいと思う。
 
@@ -63,7 +62,7 @@ $ docker-compose exec node yarn add -D node-sass style-loader css-loader sass-lo
 
 webpack で sass を扱えるようにした。スタイルシート関連の loader が乱立しており当初は混乱したけど、以下の URL が理解の助けに役立った。
 
-[https://qiita.com/shuntksh/items/bb5cbea40a343e2e791a:embed:cite]
+[Webpack って CSS 周りの Loader がいっぱいあって分かりにくいので整理してみる - Qiita](https://qiita.com/shuntksh/items/bb5cbea40a343e2e791a)
 
 css-loader は CSS 間の依存関係解決、 sass-loader や postcss-loader は CSS へのコンパイルを行っている。style-loader はバンドル時に CSS の内容を style タグとして出力するのだけど、extract-text-webpack-plugin を使うと style タグに出力する内容を別途 CSS ファイルとして生成できる。あと autoprefixer がコンパイル時にベンダープレフィックスを自動で追加してくれるので控えめに言って最高。
 
@@ -105,7 +104,7 @@ $ docker-compose exec node yarn add -D file-loader
 
 file-loader 導入にあたりファイルの出力場所や 読み込み先の設定で躓いたのだが、以下のページが大変参考になった。
 
-[https://qiita.com/tomi_shinwatec/items/ef66a60950939618c449:embed:cite]
+[file-loader で画像を扱うときのパス指定 - Qiita](https://qiita.com/tomi_shinwatec/items/ef66a60950939618c449)
 
 ## エントリーポイントの整理
 
@@ -141,7 +140,7 @@ $ rm -rf app/assets
 
 ## おまけ: Heroku デプロイ時に node でフロントエンドビルドを走らせる
 
-[https://qiita.com/yuku_t/items/8fd7551dc0418bf59aae:embed:cite]
+[sprockets ではなく nodejs を使う Rails アプリを Heroku にデプロイする方法 - Qiita](https://qiita.com/yuku_t/items/8fd7551dc0418bf59aae)
 
 以下 2(+1) つの準備が必要。
 
@@ -189,7 +188,6 @@ Heroku はルートディレクトリの `package.json` を認識して自動で
 ### `bin/yarn` を削除して `assets:precompile` へのフックを消す
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">例の 5.1.x 系からなのか rake assets:precompile にフックして yarn:install 的な何かが毎回走ってうざかったのだけど bin/yarn を抹消したら解決した(これでいいのか…？</p>&mdash; cheezenaan🍺🙅 (@cheezenaan) <a href="https://twitter.com/cheezenaan/status/957761916625043456?ref_src=twsrc%5Etfw">2018年1月28日</a></blockquote>
-
 
 いつからか Rails で `rake assets:precompile` を叩く際に `rake yarn:install` もセットで走るようになった。 Heroku デプロイ時に node 側でビルド → Rails の
 `assets:precompile` と 2 回ビルドが走るようになってしまい完全に「余計なお世話」である。`bin/yarn` を消し去ることで `assets:precompile` へのフックもなくなった。

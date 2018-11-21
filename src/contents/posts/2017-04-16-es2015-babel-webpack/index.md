@@ -9,7 +9,7 @@ path: /es2015-babel-webpack
 
 # つくったもの
 
-[http://github.com/cheezenaan/js-boilerplate:embed]
+[cheezenaan-sandbox/js-boilerplate: Bootstrap Webpack, Babel, ESLint](https://github.com/cheezenaan-sandbox/js-boilerplate)
 
 # How to Use
 

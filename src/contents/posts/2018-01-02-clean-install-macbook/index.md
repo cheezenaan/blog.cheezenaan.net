@@ -42,7 +42,7 @@ ref. [お前らの SSH Keys の作り方は間違っている - Qiita](https://q
 
 ### Brewfile の作成
 
-[https://github.com/Homebrew/homebrew-bundle:embed:cite]
+[Homebrew/homebrew-bundle: Bundler for non-Ruby dependencies from Homebrew](https://github.com/Homebrew/homebrew-bundle)
 
 homebrew でインストールしたパッケージの一覧を Gemfile 風にまとめたファイルを生成する。 Brewfile は Git 管理するのがいいかもしれない。
 
@@ -52,7 +52,7 @@ brew bundle dump -f --file=~/Dropbox/backup/Brewfile
 
 ### mackup で設定ファイルを Dropbox に待避
 
-[https://github.com/lra/mackup:embed:cite]
+[lra/mackup: Keep your application settings in sync (OS X/Linux)](https://github.com/lra/mackup)
 
 デフォルトだと `~/Dropbox/Mackup` にディレクトリを掘って、dotfiles をはじめとする設定ファイルをバックアップし、シンボリックリンクで読み込むようにしてくれる。
 

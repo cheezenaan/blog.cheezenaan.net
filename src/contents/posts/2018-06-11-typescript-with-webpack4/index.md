@@ -13,7 +13,7 @@ path: /typescript-webpack4
 
 ## Tl;dr
 
-[https://github.com/cheezenaan-sandbox/frontend_boilerplate:embed]
+[cheezenaan-sandbox/frontend_boilerplate: Docker + Webpack](https://github.com/cheezenaan-sandbox/frontend_boilerplate)
 
 ```zsh
 docker-compose run --rm yarn install
@@ -51,7 +51,7 @@ TSLint を使うか ESLint に TypeScript のパーサーを突っ込んで使�
 
 Vue.js 向けの ESLint プラグインを公式が用意しているのも、なにげに評価高い。
 
-[https://github.com/vuejs/roadmap#eslint-plugin-vue:embed]
+[vuejs/roadmap: 🗺️ Roadmap for the Vue.js project](https://github.com/vuejs/roadmap#eslint-plugin-vue)
 
 ### ESLint
 

@@ -6,6 +6,7 @@ date: 2018-06-24T11:18:10+09:00
 path: /dotfiles-on-github
 ---
 
+// TODO: fotolife から画像をとってくる
 [f:id:cheezenaan:20180624111652p:plain]
 
 n 番煎じ感しかないけれど、半年に 1 回は訪れる「開発環境を根本から見直したい欲求」に従うままやってみた。
@@ -20,7 +21,7 @@ n 番煎じ感しかないけれど、半年に 1 回は訪れる「開発環境
 
 ## Tl;dr
 
-[https://github.com/cheezenaan/dotfiles:embed]
+[cheezenaan/dotfiles: cheezenaan's dotfiles: for zsh](https://github.com/cheezenaan/dotfiles)
 
 ```sh
 $ git clone git@github.com:cheezenaan/dotfiles.git ~/dotfiles
@@ -56,7 +57,7 @@ $ tree ~/dotfiles -a -I .git
 
 prezto は使い勝手こそよかったのだけど基本全部入りなため、シェルの起動に時間がかかりがちだった。必要なものだけをプラグインとして読み込ませるようにすれば多少はマシになるのでは…という思いからプラグインマネージャーの導入を検討。 prezto などの外部ライブラリのプラグインやテーマも管理できる点に惹かれて zplug を採用。 [README](https://github.com/zplug/zplug/blob/master/doc/guide/ja/README.md) が充実してるのも好印象。
 
-[https://github.com/zplug/zplug:embed]
+[zplug/zplug: A next-generation plugin manager for zsh](https://github.com/zplug/zplug)
 
 自分が入れているプラグインの一覧は以下の通りで、 prezto からは autocompletion 用の module を持ち込んだ。あれがないと生活できない身体になってしまったのでな…。
 
@@ -93,7 +94,7 @@ zplug load
 
 これまで peco を使っていて不満もなかったけど、見た目がより好みだったのでこの機に乗り換えてみた。 fzf もまた [README](https://github.com/junegunn/fzf/blob/master/README.md) が非常に充実しているのがよい。 vim 用のプラグインもあるみたいだけど今回は導入見送り。
 
-[https://github.com/junegunn/fzf:embed]
+[junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf)
 
 もともと anyframe を使用していたおかげで peco からの移行もスムーズ。
 

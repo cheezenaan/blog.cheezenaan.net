@@ -8,7 +8,7 @@ tags:
 
 Rails チュートリアルのサンプルアプリを題材に自分だけの Rails on Docker な開発環境を作ることが、最近のマイブームになりつつある。
 
-[https://github.com/cheezenaan-sandbox/sample_app_rev4:embed:cite]
+[cheezenaan-sandbox/sample_app_rev4: Sample application forked from https://railstutorial.jp/](https://github.com/cheezenaan-sandbox/sample_app_rev4)
 
 もともと Rails チュートリアル自体はこの 1〜2 年で 3 周前後していたのだけど、ただ繰り返すだけなのもまぁ飽きるので、自分なりに工夫を入れることが多くなった。書きはじめると長くなるけど、例えばこんなかんじ:
 
@@ -23,7 +23,7 @@ Rails チュートリアルのサンプルアプリを題材に自分だけの R
 
 ## Tl;dr
 
-[https://github.com/cheezenaan-sandbox/sample_app_rev4/pull/17:embed:cite]
+[Build JavaScripts assets through webpack by cheezenaan · Pull Request #17 · cheezenaan-sandbox/sample_app_rev4](https://github.com/cheezenaan-sandbox/sample_app_rev4/pull/17)
 
 ↑ の URL からコミットを追っていくのがいいと思う。ハイライトは以下の通り。
 
@@ -122,7 +122,7 @@ module.exports = {
 
 webpack-manifest-plugin を導入することで、 webpack でビルドした生成物のマッピングが記された manifest ファイルを作成してくれる。
 
-[https://github.com/danethurber/webpack-manifest-plugin:embed:cite]
+[danethurber/webpack-manifest-plugin: webpack plugin for generating asset manifests](https://github.com/danethurber/webpack-manifest-plugin)
 
 このファイルを用いて Rails に JavaScript を読み込ませる。やることは 2 つ。
 

@@ -51,7 +51,7 @@ GitHub のアクセストークンと gist id が必要なので別途取得す�
 ## カラースキーマ
 
 Vim や tmux でも使えるカラースキーマ、Nord 一択。かっこよさは正義。
-[https://github.com/arcticicestudio/nord:embed]
+[arcticicestudio/nord: An arctic, north-bluish color palette.](https://github.com/arcticicestudio/nord)
 
 ```sh
 apm install nord-atom-ui
@@ -89,7 +89,7 @@ advanced-open-file は、`cmd + opt + o` でファイル名指定して開ける
 2. `Markdown Writer: Create Default Keymaps` を選択
 3. `keymap.cson` にキーバインドが追加される
 
-[https://atom.io/packages/markdown-writer:embed]
+[markdown-writer](https://atom.io/packages/markdown-writer)
 
 ## おまけ: インストールしたパッケージの一覧を出力する
 

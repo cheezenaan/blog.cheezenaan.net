@@ -10,7 +10,8 @@ Docker Compose を使って、ローカル環境を(ほぼ)汚さずに Rails5 �
 
 # Rails on Docker
 
-[https://github.com/cheezenaan/rails-on-docker:embed]
+[cheezenaan-sandbox/rails-on-docker: DEPRECATED: please use https://github.com/cheezenaan-sandbox/rails-on-docker-boilerplate .](https://github.com/cheezenaan-sandbox/rails-on-docker)
+
 README.md 書いてない適当ぷりではあるけれどそこは勘弁。
 
 # 動作環境(2017/3/5 時点)

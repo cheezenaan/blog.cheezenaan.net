@@ -6,7 +6,7 @@ path: /ruby-cherry-book-event
 
 まぁタイトルのとおりなんですが、行ってよかったです(KONAMI
 
-[https://techplay.jp/event/647072:embed:cite]
+[【Rails Developers Meetup 特別編】『プロを目指す人のための Ruby 入門』出版記念イベント&リファクタリングコンテスト｜ IT 勉強会なら TECH PLAY［テックプレイ］](https://techplay.jp/event/647072)
 
 今日のイベントはざっくり、
 
@@ -29,7 +29,7 @@ path: /ruby-cherry-book-event
 
 「『パーフェクト Ruby』や『Effective Ruby』よりももう少し敷居が低くて、ふだんの Rails 開発に活かせるな本があればなあ」と頭を抱えていた自分にまさにベストマッチで、ありがたや…という言葉しかない。
 
-[http://gihyo.jp/book/2017/978-4-7741-9397-7:embed:cite]
+[プロを目指す人のための Ruby 入門 言語仕様からテスト駆動開発・デバッグ技法まで：書籍案内｜技術評論社](http://gihyo.jp/book/2017/978-4-7741-9397-7)
 
 ## 「わかりやすい技術記事を書くための心構えとテクニック」
 
@@ -47,7 +47,7 @@ path: /ruby-cherry-book-event
 
 ## リファクタリングコンテスト
 
-[https://github.com/JunichiIto/ruby-problem-201712:embed:cite]
+[JunichiIto/ruby-problem-201712: A small Ruby problem for Rails developers meetup December 2017.](https://github.com/JunichiIto/ruby-problem-201712)
 
 [前にも同様の試みをやっていた](http://blog.jnito.com/entry/2017/08/26/090024)のは twitter のタイムラインで追って知っていたけど、実際に参加するのは今回がはじめて。
 
@@ -75,7 +75,8 @@ path: /ruby-cherry-book-event
 ```
 
 メモをもとに自分が出したプルリクエストはこれ。
-[https://github.com/JunichiIto/ruby-problem-201712/pull/22:embed:cite]
+
+[Refactor `transport` method by @cheezenaan by cheezenaan · Pull Request #22 · JunichiIto/ruby-problem-201712](https://github.com/JunichiIto/ruby-problem-201712/pull/22)
 
 ふだん業務で交わしてるやりとりを思い出しつつやってみたものの、どこまで前提条件に踏み込んでいいのかとかコメントのレベル感どうするか？とか、実際のコードリファクタリング以外で考えるポイントが多かった…[^1]。
 [^1]: たとえば「そもそもなんで転置行列なんだ？」とか、「このメソッドはプロジェクト内でどんな役割を果たすのか？」…とか、そのへんの話

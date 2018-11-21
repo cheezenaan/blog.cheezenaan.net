@@ -6,15 +6,14 @@ path: /renew-development-enviroinment
 
 MacBook Pro をクリーンインストールして homebrew で必要なアプリ群を導入したあとにやることをまとめた。アプリごとの細かい設定は mackup で Dropbox に退避していたのでほぼノータイムで復旧できて大変よろしい。
 
-[http://cheezenaan.hatenablog.jp/entry/2018/01/02/112022:embed]
-
+[2018 年を迎えたので MacBook Pro のクリーンインストールをした(homebrew + Brewfile + mackup) - blog.cheezenaan.net](https://blog.cheezenaan.net/clean-install-macbook-rev2018)
 こちらの記事の続きとなる。
 
 ## Ricty を捨てて Myrica に乗り換える
 
 もともと Ritcy を使っていたんだけど、もろもろのビルドが面倒なので、この機に Myrica へ乗り換えることにした。
 
-[https://myrica.estable.jp/:embed:cite]
+[プログラミングフォント Myrica / Estable | Myrica （ミリカ）は、フリーなプログラミング用 TrueType フォントです。](https://myrica.estable.jp/)
 
 ```/bin/bash
 brew tap caskroom/fonts
@@ -54,7 +53,7 @@ chsh -s /usr/local/bin/zsh
 
 つぎは prezto.
 
-[https://github.com/sorin-ionescu/prezto:embed:cite]
+[sorin-ionescu/prezto: The configuration framework for Zsh](https://github.com/sorin-ionescu/prezto)
 
 ```/bin/bash
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -66,7 +65,7 @@ done
 
 anyframe は作者の Qiita の記事を読みながら導入。
 
-[https://qiita.com/mollifier/items/81b18c012d7841ab33c3:embed:cite]
+[zsh で peco と連携するための anyframe というプラグインを作った - Qiita](https://qiita.com/mollifier/items/81b18c012d7841ab33c3)
 
 ```/bin/bash
 ghq get mollifier/anyframe
@@ -98,7 +97,7 @@ fi
 
 vim のパッケージ管理には dein を使用する。プラグイン管理は .vimrc から切り離して toml ファイルにまとめているので、例に漏れずシンボリックリンクを貼ってやる。
 
-[https://github.com/Shougo/dein.vim:embed:cite]
+[Shougo/dein.vim: Dark powered Vim/Neovim plugin manager](https://github.com/Shougo/dein.vim)
 
 ```/bin/bash
 brew install macvim --with-lua --with-override-system-vim
@@ -114,7 +113,7 @@ ln -s ~/Dropbox/Mackup/.vim/.dein_lazy.toml ~/.vim/dein/.dein_lazy.toml
 
 vim に導入している設定はだいたい以下の URL を参考にしている。
 
-[https://qiita.com/ahiruman5/items/4f3c845500c172a02935:embed:cite]
+[【詳解】モテたい Vimmer 必見　快適にコーディングするための vimrc 解説 - Qiita](https://qiita.com/ahiruman5/items/4f3c845500c172a02935)
 
 ### tmux + powerline
 
@@ -154,7 +153,7 @@ done
 
 で一括インストール。あとは `Setting sync` で gist にアップロードした設定を読み込めば終了。
 
-[https://code.visualstudio.com/docs/editor/extension-gallery#\_command-line-extension-management:embed:cite][https://marketplace.visualstudio.com/items?itemname=shan.code-settings-sync:embed:cite]
+[Settings Sync - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemname=shan.code-settings-sync)
 
 ## 開発言語のバージョン管理
 
@@ -183,7 +182,7 @@ ruby -v # => ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin17]
 
 公式のとおり `curl` を用いて nodebrew をインストールする。
 
-[https://github.com/hokaccha/nodebrew:embed:cite]
+[hokaccha/nodebrew: Node.js version manager](https://github.com/hokaccha/nodebrew)
 
 ```/bin/bash
 curl -L git.io/nodebrew | perl - setup
@@ -216,8 +215,6 @@ brew install yarn --without-node
 ### Karabiner-Elements
 
 https://pqrs.org/osx/karabiner/complex_modifications/ から `For Japanese` の設定を `Import` しておく。
-
-[https://rcmdnk.com/blog/2017/08/25/computer-mac-karabiner/:embed:cite]
 
 ### 残課題
 

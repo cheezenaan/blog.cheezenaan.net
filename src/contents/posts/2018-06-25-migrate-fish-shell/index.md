@@ -11,18 +11,15 @@ path: /migrate-fish-shell
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">即落ち2コマ並のノリで zsh から fish に寝返ろうとしている😇</p>&mdash; cheezenaan (@cheezenaan) <a href="https://twitter.com/cheezenaan/status/1010828604316401664?ref_src=twsrc%5Etfw">2018年6月24日</a></blockquote>
 
-
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">はぁ〜〜〜〜 fish 最高すぎか〜〜〜〜〜〜〜〜〜✌</p>&mdash; cheezenaan (@cheezenaan) <a href="https://twitter.com/cheezenaan/status/1011168798395658240?ref_src=twsrc%5Etfw">2018年6月25日</a></blockquote>
 
-
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">2年くらいかけて zsh で作ってきた環境が1時間ちょいで fish 上でできた &amp;&amp; 設定ファイルめっちゃ減った &amp;&amp; シェルの起動時間が当社比で8割カットになった</p>&mdash; cheezenaan (@cheezenaan) <a href="https://twitter.com/cheezenaan/status/1011174781629034499?ref_src=twsrc%5Etfw">2018年6月25日</a></blockquote>
-
 
 控えめに言って最高でした。
 
 ## やったこと
 
-[https://github.com/cheezenaan/dotfiles/pull/5:embed]
+[Introduce fish by cheezenaan · Pull Request #5 · cheezenaan/dotfiles](https://github.com/cheezenaan/dotfiles/pull/5)
 
 コミットを追っていってください :pray:
 
@@ -32,7 +29,7 @@ path: /migrate-fish-shell
 
 `bash` や `zsh` とは異なり、オートコンプリートなどの便利機能が設定不要でいきなり使えることが大きな特徴。
 
-[https://fishshell.com/:embed]
+[fish shell](https://fishshell.com/)
 
 ```/bin/sh
 brew install fish
@@ -44,11 +41,12 @@ brew install fish
 
 `$HOME/.config/fish/config.fish` に記述する。ターミナル上から `fish_config` と入力すると Web ブラウザ上から fish の設定を変更できる。
 
+// TODO: fotolife から画像をとってくる
 [f:id:cheezenaan:20180625185745p:plain]
 
 ### fisherman でプラグイン管理
 
-[https://github.com/fisherman/fisherman:embed]
+[https://github.com/fisherman/fisherman]
 
 ```sh
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman

@@ -81,7 +81,7 @@ $ docker-machine inspect dinghy
 ## 検証方法
 
 Rails チュートリアルで作成していたサンプルアプリの RSpec を回す。
-[https://github.com/cheezenaan-sandbox/sample_app_rev4:embed]
+[cheezenaan-sandbox/sample_app_rev4: Sample application forked from https://railstutorial.jp/](https://github.com/cheezenaan-sandbox/sample_app_rev4)
 
 ```sh
 $ bundle exec rake stats --all
