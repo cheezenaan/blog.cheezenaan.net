@@ -62,9 +62,9 @@ mackup backup
 
 ## クリーンインストール後にやること
 
-### XCode と追加コンポーネントのインストール
+### Xcode と追加コンポーネントのインストール
 
-High Sierra 以降からなのか homebrew インストール時には XCode が不要になっていた。とはいえ macvim を homebrew で導入する際に XCode が必要になるので、このタイミングでインストールする。
+High Sierra 以降からなのか homebrew インストール時には Xcode が不要になっていた。とはいえ macvim を homebrew で導入する際に Xcode が必要になるので、このタイミングでインストールする。
 
 ### homebrew + Brewfile を用いたパッケージ管理
 
