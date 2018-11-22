@@ -11,10 +11,7 @@ const createPages = async ({ actions, graphql }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark(sort: { fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
             html
@@ -22,6 +19,18 @@ const createPages = async ({ actions, graphql }) => {
               date
               path
               title
+            }
+          }
+          prev: previous {
+            frontmatter {
+              title
+              path
+            }
+          }
+          next {
+            frontmatter {
+              title
+              path
             }
           }
         }
@@ -33,11 +42,14 @@ const createPages = async ({ actions, graphql }) => {
     return Promise.reject(result.errors);
   }
 
-  return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  return result.data.allMarkdownRemark.edges.forEach(({ node, prev, next }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
-      context: {},
+      context: {
+        prev,
+        next,
+      },
     });
   });
 };
