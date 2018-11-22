@@ -2,6 +2,7 @@
 title: 'Hello, my First Gatsby post'
 path: '/hello-world'
 date: '2015-08-15T17:12:33.962Z'
+image: egg_yudetamago.png
 ---
 
 ## Hello World
