@@ -41,12 +41,11 @@ brew install fish
 
 `$HOME/.config/fish/config.fish` に記述する。ターミナル上から `fish_config` と入力すると Web ブラウザ上から fish の設定を変更できる。
 
-// TODO: fotolife から画像をとってくる
-[f:id:cheezenaan:20180625185745p:plain]
+![confugration](20180625185745.png)
 
 ### fisherman でプラグイン管理
 
-[https://github.com/fisherman/fisherman]
+[jorgebucaran/fisher: A package manager for the fish shell](https://github.com/jorgebucaran/fisher)
 
 ```sh
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
