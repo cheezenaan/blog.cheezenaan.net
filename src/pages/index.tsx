@@ -5,22 +5,27 @@ import * as React from 'react';
 import { Ogp } from '../components/organisms/ogp';
 import { Layout } from '../components/templates/layout';
 
-interface Post {
-  post: {
-    excerpt: string;
-    id: number;
-    frontmatter: {
-      title: string;
-      date: string;
-      path: string;
-    };
+// TODO: custom.d.ts あたりに抜き出すか
+interface MarkdownRemark {
+  excerpt?: string;
+  id?: number;
+  frontmatter: {
+    title: string;
+    path: string;
+    date?: string;
   };
+}
+
+interface MarkdownRemarkEdge {
+  post: MarkdownRemark;
+  prev?: MarkdownRemark;
+  next?: MarkdownRemark;
 }
 
 interface Props {
   data: {
     allMarkdownRemark: {
-      posts: Post[];
+      posts: MarkdownRemarkEdge[];
     };
   };
 }
@@ -61,8 +66,8 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
             path
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }
