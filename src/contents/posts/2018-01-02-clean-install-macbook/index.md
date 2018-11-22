@@ -2,9 +2,12 @@
 title: 2018年を迎えたので MacBook Pro のクリーンインストールをした(homebrew + Brewfile + mackup)
 path: /clean-install-macbook-rev2018
 date: 2018-01-02T11:20:22+09:00
+image: 20180102111010.jpg
 ---
 
-<figure class="figure-image figure-image-fotolife" title="毎年毎年、最初からはじめられる。それは素晴らしいことだと思いますよ ― 「響け！ユーフォニアム2 第13話『はるさきエピローグ』」">[f:id:cheezenaan:20180102111010j:plain]<figcaption>毎年毎年、最初からはじめられる。それは素晴らしいことだと思いますよ ― 「響け！ユーフォニアム2 第13話『はるさきエピローグ』」</figcaption></figure>
+![毎年毎年、最初からはじめられる。それは素晴らしいことだと思いますよ](20180102111010.jpg)
+
+<figure class="figure-image figure-image-fotolife" title="毎年毎年、最初からはじめられる。それは素晴らしいことだと思いますよ ― 「響け！ユーフォニアム2 第13話『はるさきエピローグ』」"><figcaption>毎年毎年、最初からはじめられる。それは素晴らしいことだと思いますよ ― 「響け！ユーフォニアム2 第13話『はるさきエピローグ』」</figcaption></figure>
 
 ここ数年は年末年始を使って、自宅 PC のクリーンインストールと開発環境構築をしているのだけど、2018 年も例に漏れずやってみた。
 

@@ -4,10 +4,10 @@ Category:
   - zsh
 date: 2018-06-24T11:18:10+09:00
 path: /dotfiles-on-github
+image: 20180624111652.png
 ---
 
-// TODO: fotolife から画像をとってくる
-[f:id:cheezenaan:20180624111652p:plain]
+![zsh](20180624111652.png)
 
 n 番煎じ感しかないけれど、半年に 1 回は訪れる「開発環境を根本から見直したい欲求」に従うままやってみた。
 
