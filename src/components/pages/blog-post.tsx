@@ -1,28 +1,30 @@
 import { Container, Content, Heading, Section, Title } from 'bloomer';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
 import { Ogp } from '../organisms/ogp';
 import { Layout } from '../templates/layout';
 
-interface Post {
-  frontmatter: {
-    date: string;
-    path: string;
-    title: string;
-  };
-  html: string;
-  excerpt: string;
-}
+type MarkdownRemark = {
+  frontmatter: Frontmatter;
+};
 
 interface Props {
   data: {
-    markdownRemark: Post;
+    markdownRemark: MarkdownRemark & {
+      html: string;
+      excerpt: string;
+    };
+  };
+  pageContext: {
+    prev?: MarkdownRemark;
+    next?: MarkdownRemark;
   };
 }
 
-export const BlogPost: React.SFC<Props> = ({ data }) => {
+export const BlogPost: React.SFC<Props> = ({ data, pageContext }) => {
   const { markdownRemark: post } = data;
+  const { prev, next } = pageContext;
 
   return (
     <Layout>
@@ -36,6 +38,22 @@ export const BlogPost: React.SFC<Props> = ({ data }) => {
           <Heading>{post.frontmatter.date}</Heading>
           <Title>{post.frontmatter.title}</Title>
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          {prev && (
+            <div>
+              prev:{' '}
+              <Link to={prev.frontmatter.path}>{prev.frontmatter.title}</Link>
+            </div>
+          )}
+          {next && (
+            <div>
+              next:{' '}
+              <Link to={next.frontmatter.path}>{next.frontmatter.title}</Link>
+            </div>
+          )}
         </Container>
       </Section>
     </Layout>
