@@ -5,21 +5,14 @@ import * as React from 'react';
 import { Ogp } from '../components/organisms/ogp';
 import { Layout } from '../components/templates/layout';
 
-// TODO: custom.d.ts あたりに抜き出すか
 interface MarkdownRemark {
-  excerpt?: string;
-  id?: number;
-  frontmatter: {
-    title: string;
-    path: string;
-    date?: string;
-  };
+  frontmatter: Frontmatter;
+  excerpt: string;
+  id: number;
 }
 
 interface MarkdownRemarkEdge {
   post: MarkdownRemark;
-  prev?: MarkdownRemark;
-  next?: MarkdownRemark;
 }
 
 interface Props {

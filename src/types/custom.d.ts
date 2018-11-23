@@ -10,3 +10,9 @@ declare module '*/gatsby-config' {
   const value: GatsbyConfig;
   export = value;
 }
+
+interface Frontmatter {
+  title: string;
+  path: string;
+  date?: string;
+}

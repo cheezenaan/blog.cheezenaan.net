@@ -5,21 +5,15 @@ import * as React from 'react';
 import { Ogp } from '../organisms/ogp';
 import { Layout } from '../templates/layout';
 
-interface Frontmatter {
-  title: string;
-  path: string;
-  date?: string;
-}
-
-interface MarkdownRemark {
+type MarkdownRemark = {
   frontmatter: Frontmatter;
-}
+};
 
 interface Props {
   data: {
     markdownRemark: MarkdownRemark & {
       html: string;
-      excerpt?: string;
+      excerpt: string;
     };
   };
   pageContext: {
