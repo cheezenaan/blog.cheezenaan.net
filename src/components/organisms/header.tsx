@@ -14,7 +14,11 @@ export const Header: React.SFC<Props> = ({ siteTitle, isRoot }) => (
       <Container>
         <NavbarBrand>
           <NavbarItem>
-            <Title tag={isRoot ? undefined : 'header'} isSize={4}>
+            <Title
+              className="header__title"
+              tag={isRoot ? undefined : 'header'}
+              isSize={4}
+            >
               <Link to="/">{siteTitle}</Link>
             </Title>
           </NavbarItem>

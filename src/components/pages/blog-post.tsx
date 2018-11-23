@@ -34,10 +34,13 @@ export const BlogPost: React.SFC<Props> = ({ data, pageContext }) => {
         description={post.excerpt}
       />
       <Section>
-        <Container>
+        <Container className="blog-post__container">
           <Heading>{post.frontmatter.date}</Heading>
           <Title>{post.frontmatter.title}</Title>
-          <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Content
+            className="blog-post__content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
         </Container>
       </Section>
       <Section>
