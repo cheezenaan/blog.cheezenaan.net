@@ -1,5 +1,3 @@
-declare type RenderCallback<T> = (data: T) => React.ReactNode;
-
 declare module '*/gatsby-config' {
   interface GatsbyConfig {
     siteMetadata: {
@@ -10,6 +8,8 @@ declare module '*/gatsby-config' {
   const value: GatsbyConfig;
   export = value;
 }
+
+type RenderCallback<T> = (data: T) => React.ReactNode;
 
 interface Frontmatter {
   title: string;
