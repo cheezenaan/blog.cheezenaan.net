@@ -52,7 +52,7 @@
     "eslint-plugin-react": "7.11.1",
     "npm-run-all": "4.1.4",
     "prettier": "1.15.2",
-    "stylelint": "9.8.0",
+    "stylelint": "9.9.0",
     "stylelint-config-prettier": "4.0.0",
     "stylelint-config-standard": "18.2.0",
     "stylelint-prettier": "1.0.5",
