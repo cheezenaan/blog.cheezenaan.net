@@ -47,5 +47,11 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-130172163-1',
+      },
+    },
   ],
 };
