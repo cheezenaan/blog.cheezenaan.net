@@ -3,14 +3,14 @@ import Helmet from 'react-helmet';
 
 import { siteMetadata } from '../../../gatsby-config';
 
-const DefaultProps = {
+const defaultProps = {
   isRoot: false,
   title: '',
   path: '',
   description: '',
 };
 
-type Props = Partial<typeof DefaultProps>;
+type Props = Partial<typeof defaultProps>;
 
 export const Ogp: React.SFC<Props> = ({ isRoot, title, path, description }) => {
   const { title: siteTitle, url: siteUrl } = siteMetadata;
