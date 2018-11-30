@@ -53,5 +53,6 @@ module.exports = {
         trackingId: 'UA-130172163-1',
       },
     },
+    'gatsby-plugin-robots-txt',
   ],
 };
