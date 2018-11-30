@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'blog.cheezenaan.net',
-    url: 'https://blog.cheezenaan.net',
+    siteUrl: 'https://blog.cheezenaan.net',
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -53,5 +53,6 @@ module.exports = {
         trackingId: 'UA-130172163-1',
       },
     },
+    'gatsby-plugin-robots-txt',
   ],
 };

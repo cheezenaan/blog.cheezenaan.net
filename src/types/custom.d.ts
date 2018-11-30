@@ -2,7 +2,7 @@ declare module '*/gatsby-config' {
   interface GatsbyConfig {
     siteMetadata: {
       title: string;
-      url: string;
+      siteUrl: string;
     };
   }
   const value: GatsbyConfig;
