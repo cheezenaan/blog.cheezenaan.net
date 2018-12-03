@@ -6002,10 +6002,10 @@ find-versions@^3.0.0:
     array-uniq "^2.0.0"
     semver-regex "^2.0.0"
 
-firebase-tools@6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-6.1.1.tgz#94a57f2d22de618431cc1235606d5958abf37aeb"
-  integrity sha512-0UOdv2BTadzCwuskoYSOAZnXy0K09AyMnVAO2eCEcikZcRimrAzzQMXiUFcRLUxav/V1gDMxjv3RgLE6gKC5jw==
+firebase-tools@6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-6.1.2.tgz#2940a8f54282f0c474b2a0dd84c2adcab0900f8f"
+  integrity sha512-51nU5XhF/XUAnBSQmTo0yYJXoyEcY34AiqMXL9jj7pkeo/vuYxLaYaB946V0ne+pEkbbfVwsts9t0Lt4L847dA==
   dependencies:
     JSONStream "^1.2.1"
     archiver "^2.1.1"
