@@ -6,7 +6,7 @@ services:
     init: true
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     command: /bin/bash -c "while true; do sleep 60; done"
     volumes:
       - .:/app:${CONSISTENCY:-cached}
