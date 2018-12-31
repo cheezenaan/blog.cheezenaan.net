@@ -30,8 +30,6 @@ date: '2018-12-31T20:00:20.000Z'
 
 ### Gatsby
 
-// TODO: ここに gatsbyjs のキャプチャを貼る
-
 [gatsbyjs/gatsby: Build blazing fast, modern apps and websites with React](https://github.com/gatsbyjs/gatsby)
 
 いわゆる静的サイトジェネレーターのひとつ。 GraphQL を利用して Markdown で書かれたプレーンテキストや WordPress や Drupal など外部の CMS といったデータソースにアクセスし、取得したデータをもとにサイト全体をひとつの React アプリケーションとして生成する。 [PRPL パターン](https://developers.google.com/web/fundamentals/performance/prpl-pattern)を踏襲した設計思想を採用しており、特別なことをしなくても爆速なサイトが容易に作れるのが大きな特徴。
@@ -51,13 +49,9 @@ Gatsby のほかにも同じ静的サイトジェネレーターの Hugo や Hex
 
 [Firebase Hosting | 高速で安全なウェブ ホスティング  |  Firebase](https://firebase.google.com/products/hosting/)
 
-// TODO: ここに Firebase Hosting トップページのキャプチャを貼る
-
 Google が提供する mBaaS である Firebase で利用できるフルマネージドホスティングサービス。 HTTPS 対応や CDN 経由による静的アセットの配信がデフォルト対応。もちろん独自ドメインの利用も OK だし、任意のデプロイ時点へのロールバックだってできる。しかも配信するアセットの容量が増えないかぎり基本無料なのもうれしい。
 
 ### Netlify
-
-// TODO: Netlify のスクショを貼る
 
 Netlify も Firebase Hosting と同様にフルマネージドホスティングサービスの一種。GitHub リポジトリへの push などをトリガーにした Netlify 上でのビルドおよびデプロイ、ホスティングがほぼ全自動で行えるのが特徴で、さらに特筆すべきはブランチごとにサイトをデプロイしてくれる機能が用意されていて、たとえば「Pull Request を作成したらレビュー環境が立ち上がって、よしなにブラウザで確認できる」という一連の体験がシュッとできあがるのが最高にすばらしい。このブログも Firebase Hosting と Netlify を組み合わせて運用しているが詳細は後述。
 
@@ -285,7 +279,6 @@ Gatsby は React や Webpack など Node.js ベースのライブラリを多く
 
 ### Firebase / Netlify
 
-- Firebase Hosting | Firebase - https://firebase.google.com/docs/hosting/
 - ブログのホスティングを Netlify から Firebase Hosting に変更した | 9m のパソコン日記 - https://blog.kksg.net/posts/netlify-to-firebase/
 
 ### CircleCI
