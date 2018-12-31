@@ -25,6 +25,41 @@ date: '2018-12-31T20:00:20.000Z'
 
 ## 技術スタック
 
+冒頭の通り Gatsby でサイトを生成し、Firebase Hosting 上にデプロイしてサイトを配信しているのだが、Netlify を利用して本番公開前のサイトを事前にチェックしている。ここからは、これらの技術選定に至った背景や実際の運用フローをまとめてみる。
+
+### Gatsby
+
+// TODO: ここに gatsbyjs のキャプチャを貼る
+
+[gatsbyjs/gatsby: Build blazing fast, modern apps and websites with React](https://github.com/gatsbyjs/gatsby)
+
+いわゆる静的サイトジェネレーターのひとつ。 GraphQL を利用して Markdown で書かれたプレーンテキストや WordPress や Drupal など外部の CMS といったデータソースにアクセスし、取得したデータをもとにサイト全体をひとつの React アプリケーションとして生成する。 [PRPL パターン](https://developers.google.com/web/fundamentals/performance/prpl-pattern)を踏襲した設計思想を採用しており、特別なことをしなくても爆速なサイトが容易に作れるのが大きな特徴。
+
+Gatsby のほかにも同じ静的サイトジェネレーターの Hugo や Hexo も候補に入れていたが採用を見送った。所感は以下の通り。
+
+- Hugo
+  - Go 製の静的サイトジェネレーター
+  - ビルドが鬼のように速く、デザインテンプレートも豊富
+  - まわりでも導入している事例をたまに聞く
+  - `{{ hogehoge }}` みたいなテンプレートの記法がなじめず導入をやめた
+- Hexo
+  - Node.js 製の静的サイトジェネレーター
+  - Gatsby の使い勝手がよかったのでたいして試さずに導入をやめた
+
+### Firebase Hosting
+
+[Firebase Hosting | 高速で安全なウェブ ホスティング  |  Firebase](https://firebase.google.com/products/hosting/)
+
+// TODO: ここに Firebase Hosting トップページのキャプチャを貼る
+
+Google が提供する mBaaS である Firebase で利用できるフルマネージドホスティングサービス。 HTTPS 対応や CDN 経由による静的アセットの配信がデフォルト対応。もちろん独自ドメインの利用も OK だし、任意のデプロイ時点へのロールバックだってできる。しかも配信するアセットの容量が増えないかぎり基本無料なのもうれしい。
+
+### Netlify
+
+// TODO: Netlify のスクショを貼る
+
+Netlify も Firebase Hosting と同様にフルマネージドホスティングサービスの一種。GitHub リポジトリへの push などをトリガーにした Netlify 上でのビルドおよびデプロイ、ホスティングがほぼ全自動で行えるのが特徴で、さらに特筆すべきはブランチごとにサイトをデプロイしてくれる機能が用意されていて、たとえば「Pull Request を作成したらレビュー環境が立ち上がって、よしなにブラウザで確認できる」という一連の体験がシュッとできあがるのが最高にすばらしい。このブログも Firebase Hosting と Netlify を組み合わせて運用しているが詳細は後述。
+
 ## 実際にやったこと
 
 ## 所感とまとめ
@@ -52,3 +87,4 @@ date: '2018-12-31T20:00:20.000Z'
 - ブログを Gatsby に移行しました - FIVETEESIXONE - https://fiveteesixone.lackland.io/2018/03/31/rebuild-blog-using-gatsby/
 - ブログを Gatsby に移行しました - とりあえず動かすところまで | tmnm.tech - https://tmnm.tech/2017/09/10/migrate-to-gatsby/
 - React Helmet を使って OGP 対応した - akameco Blog - https://akameco.github.io/blog/react-helmet/
+- Google が新たに提唱する Progressive Web Apps の新たな開発パターン「PRPL」とは？ | HTML5Experts.jp - https://html5experts.jp/komasshu/19704/
