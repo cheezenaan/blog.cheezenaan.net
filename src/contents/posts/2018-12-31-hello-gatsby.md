@@ -10,6 +10,7 @@ date: '2018-12-31T20:00:20.000Z'
 
 - 静的サイトジェネレーターには PRPL パターンを採用した爆速表示がウリの Gatsby を採用した
 - ブログサイトの配信・運用には、メンテナンスの手間とパフォーマンス面を鑑みて Firebase Hosting および Netlify を採用した
+- はてなブログから Markdown 形式でブログ記事をエクスポートしたいときは motemen/blogsync がおすすめ
 - Netlify の GitHub 連携を利用した記事のプレビューを行い、Circle CI から Firebase Hosting へデプロイしている
 
 ## モチベーション
@@ -76,6 +77,8 @@ Netlify も Firebase Hosting と同様にフルマネージドホスティング
 デザインは CSS フレームワークの [Bulma](https://bulma.io/) および [Bloomer](https://bloomer.js.org/) を採用した。Bulma を使えばなにもしなくてもレスポンシブ対応が完了するのと、Bulma をもとに作成された Bloomer は Atomic Design でいう Atom や Molecule といった粒度で使えるコンポーネントが用意されているので、これらを自分たちで組み合わせていくとそれっぽいデザインが手間なく完成する。実際に Bloomer で組み合わせたコンポーネントは Organism くらいの粒度で管理している(たとえばヘッダーやフッター、あとは後述する OGP 部分とか)。
 
 ### はてなブログの過去記事インポート
+
+わりと頭を悩ませたのがここ。まず、はてなブログの管理画面から行えるブログのエクスポート機能では出力時のフォーマットが Movable Type 形式のテキストファイルに固定される。自分がほしいのは Markdown 形式のテキストファイルなのにこれは困った。なにか手段はあるはずだと探してみると、はてなブログは[開発者向けに AtomPub API が提供されている](http://developer.hatena.ne.jp/ja/documents/blog/apis/atom)のだが、いまいち使い勝手がよいとは言い難かった。これは万策尽きたか…と思いかけたが、[motemen/blogsync](https://github.com/motemen/blogsync) というはてなブログ用の CLI ツールですべてが解決した。ブログ記事の本文が Markdown 形式でエクスポートできるのはもちろん、記事のタイトルや投稿日時、記事に付与したタグやカテゴリといったメタデータもまとめて取得できる。とにかく便利なので、気になったら[作者の記事](https://motemen.hatenablog.com/entry/2014/12/22/blogsync)を参照してもらうといいはず。
 
 ### デプロイ体制の構築
 
