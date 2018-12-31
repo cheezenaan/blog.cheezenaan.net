@@ -269,33 +269,35 @@ Gatsby は React や Webpack など Node.js ベースのライブラリを多く
 
 ## 参考 URL
 
+## PRPL pattern
+
+- [Google が新たに提唱する Progressive Web Apps の新たな開発パターン「PRPL」とは？ | HTML5Experts.jp](https://html5experts.jp/komasshu/19704/)
+- [PRPL Pattern | GatsbyJS](https://www.gatsbyjs.org/docs/prpl-pattern/)
+- [PRPL パターン実装の具体例調査と比較 - Qiita](https://qiita.com/kimamula/items/4e25b8d2caca314f9dd2)
+
 ### Gatsby
 
-- React ベースの静的サイトジェネレータ Gatsby の作者、Kyle Mathews 氏との Q&A - https://www.infoq.com/jp/news/2017/07/gatsby-kyle-mathews-interview
-- React.js 製の静的サイトジェネレーター Gatsby に移行した - Qiita - https://qiita.com/jaxx2104/items/5f28915355a85d36e38a
-- Full React な静的サイトジェネレーターの Gatsby を触ってみた | tmnm.tech - https://tmnm.tech/2017/09/09/try-gatsbyjs
-- PRPL パターン実装の具体例調査と比較 - Qiita - https://qiita.com/kimamula/items/4e25b8d2caca314f9dd2
-- PRPL Pattern | GatsbyJS - https://www.gatsbyjs.org/docs/prpl-pattern/
+- [React ベースの静的サイトジェネレータ Gatsby の作者、Kyle Mathews 氏との Q&A](https://www.infoq.com/jp/news/2017/07/gatsby-kyle-mathews-interview)
+- [Full React な静的サイトジェネレーターの Gatsby を触ってみた | tmnm.tech](https://tmnm.tech/2017/09/09/try-gatsbyjs/)
+- [ブログを Gatsby に移行しました - FIVETEESIXONE](https://fiveteesixone.lackland.io/2018/03/31/rebuild-blog-using-gatsby/)
+- [React Helmet を使って OGP 対応した - akameco Blog](https://akameco.github.io/blog/react-helmet/)
 
 ### Firebase / Netlify
 
-- ブログのホスティングを Netlify から Firebase Hosting に変更した | 9m のパソコン日記 - https://blog.kksg.net/posts/netlify-to-firebase/
+- [ブログのホスティングを Netlify から Firebase Hosting に変更した | 9m のパソコン日記](https://blog.kksg.net/posts/netlify-to-firebase/)
 
 ### CircleCI
 
-- CircleCI2.0 の Workflows を試す – timakin – Medium - https://medium.com/@timakin/circleci2-0%E3%81%AEworkflows%E3%82%92%E8%A9%A6%E3%81%99-1329042122fd
-- CircleCI 2.0 の「ワークフロー機能」を学べる公式デモ用リポジトリ circleci-demo-workflows - kakakakakku blog - https://kakakakakku.hatenablog.com/entry/2018/03/22/030358
-
-### その他
-
-- 静的サイトを公開するならどこがいいの？ #技術書典 - フロントエンドの地獄 - https://blog.nabettu.com/entry/staticsite
-- Serverless Architecture を採用した MF KESSAI Tech Blog について | MF KESSAI TECH BLOG - https://tech.mfkessai.co.jp/2018/05/1/
-- 記事作成から公開までを GitHub で完結できる技術ブログ基盤作り - BizReach Tech Blog - https://tech.bizreach.co.jp/posts/49/process-to-build-tech-blog/
-- ブログを Gatsby に移行しました - FIVETEESIXONE - https://fiveteesixone.lackland.io/2018/03/31/rebuild-blog-using-gatsby/
-- React Helmet を使って OGP 対応した - akameco Blog - https://akameco.github.io/blog/react-helmet/
-- Google が新たに提唱する Progressive Web Apps の新たな開発パターン「PRPL」とは？ | HTML5Experts.jp - https://html5experts.jp/komasshu/19704/
+- [CircleCI2.0 の Workflows を試す – timakin – Medium](https://medium.com/@timakin/circleci2-0%E3%81%AEworkflows%E3%82%92%E8%A9%A6%E3%81%99-1329042122fd)
+- [CircleCI 2.0 の「ワークフロー機能」を学べる公式デモ用リポジトリ circleci-demo-workflows - kakakakakku blog](https://kakakakakku.hatenablog.com/entry/2018/03/22/030358)
 
 ### Atomic Design
 
 - [Vue.js からみた AtomicDesign – Takanori Sugawara – Medium](https://medium.com/@t_sugawara/vue-js-%E3%81%8B%E3%82%89%E3%81%BF%E3%81%9F-atomicdesign-e90517842801)
 - [Atomic design デザインと実装の狭間 - Speaker Deck](https://speakerdeck.com/ts020/vuefes)
+
+### その他
+
+- [静的サイトを公開するならどこがいいの？ #技術書典 - フロントエンドの地獄](https://blog.nabettu.com/entry/staticsite)
+- [Serverless Architecture を採用した MF KESSAI Tech Blog について | MF KESSAI TECH BLOG](https://tech.mfkessai.co.jp/2018/05/1/)
+- [記事作成から公開までを GitHub で完結できる技術ブログ基盤作り - BizReach Tech Blog](https://tech.bizreach.co.jp/posts/49/process-to-build-tech-blog/)
