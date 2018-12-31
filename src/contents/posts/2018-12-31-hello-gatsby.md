@@ -11,7 +11,7 @@ date: '2018-12-31T20:00:20.000Z'
 - 静的サイトジェネレーターには PRPL パターンを採用した爆速表示がウリの Gatsby を採用した
 - ブログサイトの配信・運用には、メンテナンスの手間とパフォーマンス面を鑑みて Firebase Hosting および Netlify を採用した
 - はてなブログから Markdown 形式でブログ記事をエクスポートしたいときは motemen/blogsync がおすすめ
-- Netlify の GitHub 連携を利用した記事のプレビューを行い、Circle CI から Firebase Hosting へデプロイしている
+- Netlify の GitHub 連携を利用した記事のプレビューを行い、CircleCI から Firebase Hosting へデプロイしている
 
 ## モチベーション
 
@@ -82,7 +82,71 @@ Netlify も Firebase Hosting と同様にフルマネージドホスティング
 
 ### デプロイ体制の構築
 
-### OGP / SNS 対応
+先述の通り本番への公開前は GitHub と連携した Netlify に自動デプロイされたプレビュー環境上でサイトの見た目を確認できるので説明は割愛して、ここでは [CircleCI](https://circleci.com/) による CI 環境の構築および Firebase Hosting へのデプロイについて触れていく。
+
+…と書いてみたものの、だんだんと説明が面倒くさくなったので、実際に CircleCI で使用している `config.yml` をそのまま貼り付けてみる。
+
+ポイントは以下の通り。
+
+- [CircleCI Workflows](https://circleci.com/docs/2.0/workflows-overview/) を利用して、Firebase Hosting へのデプロイは master ブランチでのビルドが成功したときのみ実行されるようにする
+- `persist_to_workspace` および `attach_workspace` を利用して、`build` ステップで生成した `public/` 以下のファイルを `deploy` ステップに横流しして、そのままデプロイできるようにしている
+
+```yaml
+version: 2
+default_settings: &default_settings
+  docker:
+    - image: circleci/node:10.15.0-stretch
+  working_directory: ~/repo
+jobs:
+  build:
+    <<: *default_settings
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-
+      - run: yarn install
+      - save_cache:
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run: yarn lint
+      - run: yarn typecheck
+      - run: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - public/
+            - node_modules/
+            - package.json
+            - firebase.json
+  deploy:
+    <<: *default_settings
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: deploy to firebase
+          command: $(yarn bin)/firebase deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+```
+
+### OGP / SNS 対応など
+
+- TODO: ここにサンプルを貼る
 
 ## 所感とまとめ
 
@@ -101,6 +165,11 @@ Netlify も Firebase Hosting と同様にフルマネージドホスティング
 - Firebase Hosting | Firebase - https://firebase.google.com/docs/hosting/
 - ブログのホスティングを Netlify から Firebase Hosting に変更した | 9m のパソコン日記 - https://blog.kksg.net/posts/netlify-to-firebase/
 
+### CircleCI
+
+- CircleCI2.0 の Workflows を試す – timakin – Medium - https://medium.com/@timakin/circleci2-0%E3%81%AEworkflows%E3%82%92%E8%A9%A6%E3%81%99-1329042122fd
+- CircleCI 2.0 の「ワークフロー機能」を学べる公式デモ用リポジトリ circleci-demo-workflows - kakakakakku blog - https://kakakakakku.hatenablog.com/entry/2018/03/22/030358
+
 ### その他
 
 - 静的サイトを公開するならどこがいいの？ #技術書典 - フロントエンドの地獄 - https://blog.nabettu.com/entry/staticsite
@@ -110,3 +179,8 @@ Netlify も Firebase Hosting と同様にフルマネージドホスティング
 - ブログを Gatsby に移行しました - とりあえず動かすところまで | tmnm.tech - https://tmnm.tech/2017/09/10/migrate-to-gatsby/
 - React Helmet を使って OGP 対応した - akameco Blog - https://akameco.github.io/blog/react-helmet/
 - Google が新たに提唱する Progressive Web Apps の新たな開発パターン「PRPL」とは？ | HTML5Experts.jp - https://html5experts.jp/komasshu/19704/
+
+### Atomic Design
+
+- [Vue.js からみた AtomicDesign – Takanori Sugawara – Medium](https://medium.com/@t_sugawara/vue-js-%E3%81%8B%E3%82%89%E3%81%BF%E3%81%9F-atomicdesign-e90517842801)
+- [Atomic design デザインと実装の狭間 - Speaker Deck](https://speakerdeck.com/ts020/vuefes)
