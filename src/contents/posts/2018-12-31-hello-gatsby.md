@@ -64,12 +64,16 @@ Netlify も Firebase Hosting と同様にフルマネージドホスティング
 
 実際にブランチ切って作業した内容はもう少しあった気がするけれど、だいたいこんなことをやってたらブログサイトができた。
 
-- サイトのデザイン調整
+- サイトデザインの調整
 - はてなブログの過去記事インポート
 - デプロイ体制の構築
 - OGP / SNS 対応
 
-### サイトのデザイン調整
+### サイトデザインの調整
+
+ブログ用のスターターキットも用意されていたけど、まずはミニマムな構成ではじめたかったので、`gatsby new` を叩いて [gatsby-starter-default](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default/) で生成される素朴なテンプレートを使用した。先述の通りテンプレートエンジンに React を使用しているのだけど吐き出されたファイルが JavaScript(ES2015) だったので「React 使うのに TypeScript で書かない理由があるだろうか…」と思い、サクッと TypeScript 化。[Gatsby 公式で型定義ファイルを用意してくれていて](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/index.d.ts)非常に助かる。
+
+デザインは CSS フレームワークの [Bulma](https://bulma.io/) および [Bloomer](https://bloomer.js.org/) を採用した。Bulma を使えばなにもしなくてもレスポンシブ対応が完了するのと、Bulma をもとに作成された Bloomer は Atomic Design でいう Atom や Molecule といった粒度で使えるコンポーネントが用意されているので、これらを自分たちで組み合わせていくとそれっぽいデザインが手間なく完成する。実際に Bloomer で組み合わせたコンポーネントは Organism くらいの粒度で管理している(たとえばヘッダーやフッター、あとは後述する OGP 部分とか)。
 
 ### はてなブログの過去記事インポート
 
