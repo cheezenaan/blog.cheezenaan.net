@@ -144,9 +144,126 @@ workflows:
               only: master
 ```
 
-### OGP / SNS 対応など
+### OGP / SNS 対応
 
-- TODO: ここにサンプルを貼る
+ここまでやればブログサイトの公開に必要な準備はひととおり済んだことになるが、公開した記事を SNS でシェアする際には [OGP 対応](https://ferret-plus.com/610)をしておくと見た目が少しだけよくなるので、あわせてやってみた。とはいえ [React Helmet](https://github.com/nfl/react-helmet) を使ってメタタグを生成するだけなのだが、強いて言うなら個々のブログ記事ページと一覧ページや 404 ページとで微妙に内容を出し分ける工夫を加えたのがポイントで、先述の `Ogp` コンポーネントを用意して、個々のページで読み込ませている。
+
+やはり説明が面倒くさくなってきたのでコードを雑に貼り付ける。
+
+```tsx
+// src/components/organisms/ogp.tsx
+
+import * as React from 'react';
+import Helmet from 'react-helmet';
+
+import { siteMetadata } from '../../../gatsby-config';
+
+const defaultProps = {
+  isRoot: false,
+  title: '',
+  path: '',
+  description: '',
+};
+
+type Props = Partial<typeof defaultProps>;
+
+export const Ogp: React.SFC<Props> = ({ isRoot, title, path, description }) => {
+  const { title: siteTitle, siteUrl } = siteMetadata;
+
+  return (
+    <Helmet
+      title={title}
+      meta={[
+        {
+          property: 'description',
+          content: description || 'something awesome',
+        },
+        {
+          property: 'og:title',
+          content: title ? `${title} - ${siteTitle}` : siteTitle,
+        },
+        { property: 'og:type', content: isRoot ? 'website' : 'article' },
+        {
+          property: 'og:url',
+          content: `${path ? `${siteUrl.concat(path)}` : siteUrl}`,
+        },
+        {
+          property: 'og:image',
+          content:
+            'https://www.gravatar.com/avatar/544edf5a0f3541a800f0b2911a3176df.jpg?size=400',
+        },
+        {
+          property: 'og:description',
+          content: description || 'something awesome',
+        },
+        { property: 'twitter:card', content: 'summary' },
+        { property: 'twitter:site', content: '@cheezenaan' },
+      ]}
+    />
+  );
+};
+```
+
+```tsx
+// src/pages/index.tsx
+
+import { Box, Container, Content, Heading, Section, Subtitle } from 'bloomer';
+import { graphql, Link } from 'gatsby';
+import * as React from 'react';
+import { Ogp } from '../components/organisms/ogp';
+import { Layout } from '../components/templates/layout';
+
+// (snip)
+
+const IndexPage: React.SFC<Props> = ({ data }) => {
+  const { posts } = data.allMarkdownRemark;
+  const filteredPosts = posts.filter(
+    ({ post }) => post.frontmatter.title.length > 0
+  );
+
+  return (
+    <Layout isRoot>
+      <Ogp isRoot />
+      <Section>{/* snip */}</Section>
+    </Layout>
+  );
+};
+export default IndexPage;
+
+// (snip)
+```
+
+```tsx
+// src/components/pages/blog-post.tsx
+
+import { Container, Content, Heading, Section, Title } from 'bloomer';
+import { graphql, Link } from 'gatsby';
+import * as React from 'react';
+
+import { Ogp } from '../organisms/ogp';
+import { Layout } from '../templates/layout';
+
+// (snip)
+
+export const BlogPost: React.SFC<Props> = ({ data, pageContext }) => {
+  const { markdownRemark: post } = data;
+  const { prev, next } = pageContext;
+
+  return (
+    <Layout>
+      <Ogp
+        title={post.frontmatter.title}
+        path={post.frontmatter.path}
+        description={post.excerpt}
+      />
+      <Section>{/* snip */}</Section>
+    </Layout>
+  );
+};
+export default BlogPost;
+
+// (snip)
+```
 
 ## 所感とまとめ
 
@@ -176,7 +293,6 @@ workflows:
 - Serverless Architecture を採用した MF KESSAI Tech Blog について | MF KESSAI TECH BLOG - https://tech.mfkessai.co.jp/2018/05/1/
 - 記事作成から公開までを GitHub で完結できる技術ブログ基盤作り - BizReach Tech Blog - https://tech.bizreach.co.jp/posts/49/process-to-build-tech-blog/
 - ブログを Gatsby に移行しました - FIVETEESIXONE - https://fiveteesixone.lackland.io/2018/03/31/rebuild-blog-using-gatsby/
-- ブログを Gatsby に移行しました - とりあえず動かすところまで | tmnm.tech - https://tmnm.tech/2017/09/10/migrate-to-gatsby/
 - React Helmet を使って OGP 対応した - akameco Blog - https://akameco.github.io/blog/react-helmet/
 - Google が新たに提唱する Progressive Web Apps の新たな開発パターン「PRPL」とは？ | HTML5Experts.jp - https://html5experts.jp/komasshu/19704/
 
