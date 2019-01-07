@@ -4,14 +4,14 @@
      ":automergePatch",
      ":maintainLockFilesMonthly",
      ":preserveSemverRanges",
-     ":timezone(Asia/thTokyo)"
+     ":timezone(Asia/Tokyo)"
   ],
-  "label": ["renovate"],
+  "labels": ["renovate"],
   "schedule": ["before 8am on Monday"],
   "packageRules": [
     {
       "groupName": "Linter / Formatter packages",
-      "packagePaggerns": ["^eslint, ^stylelint", "^prettier"]
+      "packagePatterns": ["^eslint, ^stylelint", "^prettier"]
     }
   ]
 }
