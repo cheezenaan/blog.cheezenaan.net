@@ -12,10 +12,6 @@
     {
       "groupName": "Linter / Formatter packages",
       "packagePaggerns": ["^eslint, ^stylelint", "^prettier"]
-    },
-    {
-      "groupName": "Gatsby packages",
-      "packagePaggerns": ["^gatsby"]
     }
   ]
 }
