@@ -1,3 +1,21 @@
 {
-  "extends": ["config:base", ":prHourlyLimitNone"]
+  "extends": [
+     "config:base",
+     ":automergePatch",
+     ":maintainLockFilesMonthly",
+     ":preserveSemverRanges",
+     ":timezone(Asia/thTokyo)"
+  ],
+  "label": ["renovate"],
+  "schedule": ["before 8am on Monday"],
+  "packageRules": [
+    {
+      "groupName": "Linter / Formatter packages",
+      "packagePaggerns": ["^eslint, ^stylelint", "^prettier"]
+    },
+    {
+      "groupName": "Gatsby packages",
+      "packagePaggerns": ["^gatsby"]
+    }
+  ]
 }
