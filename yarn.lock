@@ -13322,10 +13322,10 @@ stylelint-config-standard@18.2.0:
   dependencies:
     stylelint-config-recommended "^2.1.0"
 
-stylelint-prettier@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/stylelint-prettier/-/stylelint-prettier-1.0.5.tgz#762807a1b4565c88f186c57bd6e0d9e89b8fbb50"
-  integrity sha512-nrrw+z4muE/3KC3OOUXOiq2qfQnVbTr2Vt6vLyW3ULkTPM2rHwmHSYIL+xcxAIRTMPGHGoCkNNQkqTEyE8OIhg==
+stylelint-prettier@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/stylelint-prettier/-/stylelint-prettier-1.0.6.tgz#479b76336751cb617c5beb7545d05a791f945e1e"
+  integrity sha512-XKlTyJHJYiyXs9JXRMt2FQxMJoBSjz4I6+4+/R3o8/ePof19v9naC4d0zsMKUJ88by81+qHfqXBLfmAalu46cg==
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
