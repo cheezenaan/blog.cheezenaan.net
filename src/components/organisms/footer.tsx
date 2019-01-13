@@ -27,7 +27,7 @@ export const Footer: React.SFC = () => (
           </a>
           , a blazing fast modern site generator for React.
         </p>
-        <p>© 2018. cheezenaan</p>
+        <p>© 2019. cheezenaan</p>
       </Content>
       <Level isMobile>
         <LevelLeft>
