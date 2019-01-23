@@ -5,9 +5,9 @@ import * as React from 'react';
 import { Ogp } from '../organisms/ogp';
 import { Layout } from '../templates/layout';
 
-type MarkdownRemark = {
+interface MarkdownRemark {
   frontmatter: Frontmatter;
-};
+}
 
 interface Props {
   data: {

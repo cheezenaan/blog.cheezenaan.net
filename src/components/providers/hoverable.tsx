@@ -13,7 +13,7 @@ const initialStyle = { isHovered: false };
 type State = Readonly<typeof initialStyle>;
 
 export class Hoverable extends React.Component<Props, State> {
-  readonly state: State = initialStyle;
+  public readonly state: State = initialStyle;
 
   private toggleHovered = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
