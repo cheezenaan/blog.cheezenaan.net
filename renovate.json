@@ -7,11 +7,5 @@
      ":timezone(Asia/Tokyo)"
   ],
   "labels": ["renovate"],
-  "schedule": ["before 8am on Monday"],
-  "packageRules": [
-    {
-      "groupName": "Linter / Formatter packages",
-      "packagePatterns": ["^eslint, ^stylelint", "^prettier"]
-    }
-  ]
+  "schedule": ["before 8am on Monday"]
 }
