@@ -1,6 +1,6 @@
 ---
 title: Markdown エディタとして Atom を使えるようにするまでにやったこと
-date: 2017-01-22T10:30:00+09:00
+date: '2017-01-22T10:30:00+09:00'
 path: /atom-as-markdown-editor
 ---
 

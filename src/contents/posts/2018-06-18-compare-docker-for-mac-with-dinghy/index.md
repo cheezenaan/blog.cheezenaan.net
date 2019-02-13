@@ -5,7 +5,7 @@ Category:
   - Ruby
   - Rails
   - ぼくがかんがえたさいきょうの Rails チュートリアル
-date: 2018-06-18T14:21:56+09:00
+date: '2018-06-18T14:21:56+09:00'
 path: /compare-docker-for-mac-with-dinghy
 ---
 

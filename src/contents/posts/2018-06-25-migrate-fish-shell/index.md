@@ -3,7 +3,7 @@ title: シェルを zsh から fish に乗り換えたらモノクロームだ�
 Category:
   - zsh
   - fish
-date: 2018-06-25T19:05:13+09:00
+date: '2018-06-25T19:05:13+09:00'
 path: /migrate-fish-shell
 ---
 
