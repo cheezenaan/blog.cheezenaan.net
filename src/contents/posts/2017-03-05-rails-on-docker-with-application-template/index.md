@@ -1,6 +1,6 @@
 ---
 title: Docker上にRails5×MySQLな新規プロジェクトを爆速で構築する
-date: 2017-03-05T13:21:24+09:00
+date: '2017-03-05T13:21:24+09:00'
 path: /rails-on-docker-with-application-template
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 2018年を迎えたので MacBook Pro のクリーンインストールをした(homebrew + Brewfile + mackup)
 path: /clean-install-macbook-rev2018
-date: 2018-01-02T11:20:22+09:00
+date: '2018-01-02T11:20:22+09:00'
 image: 20180102111010.jpg
 ---
 

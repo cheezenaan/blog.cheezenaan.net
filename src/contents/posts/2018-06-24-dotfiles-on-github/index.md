@@ -2,7 +2,7 @@
 title: zsh の設定ファイルを整理して GitHub 上で管理することにした
 Category:
   - zsh
-date: 2018-06-24T11:18:10+09:00
+date: '2018-06-24T11:18:10+09:00'
 path: /dotfiles-on-github
 image: 20180624111652.png
 ---

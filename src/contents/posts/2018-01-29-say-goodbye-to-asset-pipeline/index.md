@@ -8,7 +8,7 @@ tags:
     'Heroku',
   ]
 
-date: 2018-01-29T10:15:04+09:00
+date: '2018-01-29T10:15:04+09:00'
 path: /say-boodbye-to-asset-pipeline
 ---
 

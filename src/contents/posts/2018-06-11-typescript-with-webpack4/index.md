@@ -5,7 +5,7 @@ Category:
   - TypeScript
   - Webpack
   - Docker
-date: 2018-06-11T07:08:43+09:00
+date: '2018-06-11T07:08:43+09:00'
 path: /typescript-webpack4
 ---
 

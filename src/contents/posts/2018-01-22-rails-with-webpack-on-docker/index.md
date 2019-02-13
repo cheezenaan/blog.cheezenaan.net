@@ -1,7 +1,7 @@
 ---
 title: Rails on Docker な開発環境からモダン JavaScript のビルド環境をコンテナごと独立させてみた
 path: /rails-with-webpack-on-docker
-date: 2018-01-22T21:45:20+09:00
+date: '2018-01-22T21:45:20+09:00'
 tags:
   ['ぼくがかんがえたさいきょうの Rails チュートリアル', 'Docker', 'JavaScript']
 ---

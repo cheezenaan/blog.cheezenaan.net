@@ -1,6 +1,6 @@
 ---
 title: ES2015 + Babel + Webpack + ESLint な開発環境をつくった
-date: 2017-04-16T23:00:00+09:00
+date: '2017-04-16T23:00:00+09:00'
 path: /es2015-babel-webpack
 ---
 

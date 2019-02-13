@@ -1,6 +1,6 @@
 ---
 title: 2018年を迎えたので開発環境を見直した(iTerm2 + zsh + prezto + peco + anyframe + vim + VSCode)
-date: 2018-01-02T13:08:09+09:00
+date: '2018-01-02T13:08:09+09:00'
 path: /renew-development-enviroinment
 ---
 
