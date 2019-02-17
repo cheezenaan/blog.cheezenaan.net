@@ -1,11 +1,11 @@
 {
   "extends": [
-     "config:base",
-     ":automergePatch",
-     ":maintainLockFilesMonthly",
-     ":preserveSemverRanges",
-     ":timezone(Asia/Tokyo)"
+    "config:base",
+    ":automergePatch",
+    ":maintainLockFilesMonthly",
+    ":preserveSemverRanges",
+    ":timezone(Asia/Tokyo)"
   ],
   "labels": ["renovate"],
-  "schedule": ["before 8am on Monday"]
+  "schedule": ["before 7am"]
 }
