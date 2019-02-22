@@ -7,5 +7,5 @@
     ":timezone(Asia/Tokyo)"
   ],
   "labels": ["renovate"],
-  "schedule": ["before 7am"]
+  "schedule": ["before 7am on Monday"]
 }
