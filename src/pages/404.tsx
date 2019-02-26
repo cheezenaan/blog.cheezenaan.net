@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Ogp } from '../components/organisms/ogp';
 import { Layout } from '../components/templates/layout';
 
-const NotFoundPage: React.SFC = () => (
+const NotFoundPage: React.FC = () => (
   <Layout>
     <Ogp />
     <Section>

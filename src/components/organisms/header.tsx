@@ -8,7 +8,7 @@ interface Props {
 }
 
 // TODO: BlogPost のときだけ Navbar の classname に "has-shadow" を足したいので classNames を入れる
-export const Header: React.SFC<Props> = ({ siteTitle, isRoot }) => (
+export const Header: React.FC<Props> = ({ siteTitle, isRoot }) => (
   <header>
     <Navbar className="is-spaced has-shadow">
       <Container>

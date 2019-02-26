@@ -22,7 +22,7 @@ interface Props {
   };
 }
 
-export const BlogPost: React.SFC<Props> = ({ data, pageContext }) => {
+export const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const { markdownRemark: post } = data;
   const { prev, next } = pageContext;
 

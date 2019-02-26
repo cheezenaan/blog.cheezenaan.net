@@ -18,7 +18,7 @@ interface Props {
   isRoot?: boolean;
 }
 
-export const Layout: React.SFC<Props> = ({ children, isRoot }) => (
+export const Layout: React.FC<Props> = ({ children, isRoot }) => (
   <>
     <Helmet
       defaultTitle={siteMetadata.title}

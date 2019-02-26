@@ -12,7 +12,7 @@ import * as React from 'react';
 
 import { Hoverable } from '../providers/hoverable';
 
-export const Footer: React.SFC = () => (
+export const Footer: React.FC = () => (
   <BloomerFooter id="footer">
     <Container>
       <Content isSize="small">

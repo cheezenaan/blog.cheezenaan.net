@@ -23,7 +23,7 @@ interface Props {
   };
 }
 
-const IndexPage: React.SFC<Props> = ({ data }) => {
+const IndexPage: React.FC<Props> = ({ data }) => {
   const { posts } = data.allMarkdownRemark;
   const filteredPosts = posts.filter(
     ({ post }) => post.frontmatter.title.length > 0
