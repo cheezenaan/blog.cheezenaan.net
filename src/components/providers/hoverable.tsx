@@ -20,7 +20,7 @@ export class Hoverable extends React.Component<Props, State> {
     this.setState(prevState => ({ isHovered: !prevState.isHovered }));
   };
 
-  public render() {
+  public render(): React.ReactNode {
     const { render } = this.props;
     const { isHovered } = this.state;
 
