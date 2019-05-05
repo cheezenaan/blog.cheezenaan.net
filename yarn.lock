@@ -2915,7 +2915,7 @@ color-string@^1.5.2:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.0.0, color@^3.1.0:
+color@^3.0.0, color@^3.1.0, color@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.1.tgz#7abf5c0d38e89378284e873c207ae2172dcc8a61"
   integrity sha512-PvUltIXRjehRKPSy89VnDWFKY58xyhTLyxIg21vwQBI6qLwZNPmC8k3C1uytIgFKEpOIzN4y32iPm8231zFHIg==
@@ -5571,10 +5571,10 @@ gatsby-cli@^2.5.12:
     yargs "^12.0.5"
     yurnalist "^1.0.2"
 
-gatsby-link@^2.0.16:
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.17.tgz#f6129a942c9138466fceb25cce89d579f3a62f85"
-  integrity sha512-PAvQTAwjebiwzso2PeLGT/P365q4iqE62YYY0heK46VKMvhSklCOx0MjldYsUjp0lvtU23plwwVabitmBuPztQ==
+gatsby-link@^2.0.17:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.1.1.tgz#603326df8557720935f60eeffac3f60150d11eeb"
+  integrity sha512-5krDc87NAUDztbir5OOs3ec/2CxSSXnIIxhRKrG+yJXKK+dIcxxnPr+qjydEsyHMf7McBuxb1x5/r6rouzcBqQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@types/reach__router" "^1.0.0"
@@ -5588,10 +5588,10 @@ gatsby-plugin-catch-links@2.0.13:
     "@babel/runtime" "^7.0.0"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-google-analytics@2.0.18:
-  version "2.0.18"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.18.tgz#f56aa1d0fc65bbc2f902ce0bc25159ea2e571524"
-  integrity sha512-fW2WKo7onfxr9sVUCKKtDRUVqleVHBp9CMz7xVWnNpiM3+u4KgYWj7VzmjKPr00zgmp/AOEu1L7SUjYMDys0QA==
+gatsby-plugin-google-analytics@2.0.19:
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.19.tgz#02430313336aa65712bad75600e45a7b510bbd40"
+  integrity sha512-Db1nOpzS1Nq52E0tFfgF2uCPCnWEtJbUMKLX1RU5Hfki8BoPHpZUHrcd5NtT3KQuVa7Ekps+3uJVziK+Yj5n+A==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
@@ -5652,10 +5652,10 @@ gatsby-plugin-sass@2.0.11:
     "@babel/runtime" "^7.0.0"
     sass-loader "^7.0.1"
 
-gatsby-plugin-sharp@2.0.35:
-  version "2.0.35"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.35.tgz#771053475d27592105522de4aafe884fdf8f02f2"
-  integrity sha512-xmFI8D1OpFJzRjYXWdEW9TJyXslonFcXezFmcMglzFrSTxUylkw0IXWFkuyexm00mEKLBIid/DVj/J3B9oCd2Q==
+gatsby-plugin-sharp@2.0.36:
+  version "2.0.36"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.36.tgz#a8877cea81a7f2f6a0a1af2d0b96705a03b943d2"
+  integrity sha512-/JD6JalZEXHmotdshITazIe0nWUIgZ29JIv1KiDZIwSlSPi7Mlg0n6FJLA0OlxLvc2q5+0NwbSAoegqVLV/qZA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -5670,7 +5670,8 @@ gatsby-plugin-sharp@2.0.35:
     potrace "^2.1.1"
     probe-image-size "^4.0.0"
     progress "^1.1.8"
-    sharp "^0.21.3"
+    semver "^5.6.0"
+    sharp "^0.22.1"
     svgo "^1.2.0"
 
 gatsby-plugin-twitter@^2.0.9:
@@ -5722,19 +5723,19 @@ gatsby-remark-images@3.0.11:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.0.1"
 
-gatsby-remark-prismjs@3.2.8:
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.2.8.tgz#5850d5a43defb5502f50e9ef0a827ff4a2c6b066"
-  integrity sha512-bqvBWLEt6u2o2IQ1nEgR3PCozvEMX5gfcqCilJrA/zjk7dKnCExe1074mXOR3hly7fS54OOJlXQvjMhWHSAKeg==
+gatsby-remark-prismjs@3.2.9:
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.2.9.tgz#d8f30fe35f9db0db91d28e9109111a4c1499e227"
+  integrity sha512-6SqFpzp46zjnOzoBss2Ghao1YMbFpwPzxpGuD36goFdyNyRtA/m+MBvR+BHFsjVa2bgpm6eYRo6APNjYPyzZcg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-source-filesystem@2.0.32:
-  version "2.0.32"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.32.tgz#c39e8bd25e11da5e47fa921c2f050018854fe23a"
-  integrity sha512-OdgyIu7myI2lrKf13zN3HQ0GBcR4nm7B+XkAytfW394BLiSYLt7htRtSBIxm19eLtfY4yVFLFE3R48FuP/J+/w==
+gatsby-source-filesystem@2.0.33:
+  version "2.0.33"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.33.tgz#c8b4ed9a231a325ca356f739bab77ea8fad5824d"
+  integrity sha512-GH/Y8dJ/+EKie3ckMrcHn1MsYcLVNbglCKNoTaDuY31rFCh3gq6310bdi8u//J+dcgcz7ggHXTN0W7FXxWF9FQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
@@ -5799,10 +5800,10 @@ gatsby-transformer-remark@2.3.12:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.3.0"
 
-gatsby@2.3.32:
-  version "2.3.32"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.32.tgz#bb6bb141c8122cd023eddc9d1aaec1dbea4917f2"
-  integrity sha512-nSlc6IdNoOfzuDme+Z2gSkqmXB+0/j3Y+ElFSE6G8m3hCkV+2CuP7YsREe9V/K1609QwJcmQFRNAqtS1/uYjXw==
+gatsby@2.3.36:
+  version "2.3.36"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.36.tgz#5a1a4fe20b6988671f6bf69d2abec219110bc4ca"
+  integrity sha512-tVgSoxGH0xL/fBahxIxmJQpFg5Wou6FrvYa2qd9ADfbFHmyEc00C/x9XXpv9mg51z9n2y1xzswFnMjopBJpKUg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -5860,7 +5861,7 @@ gatsby@2.3.32:
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
     gatsby-cli "^2.5.12"
-    gatsby-link "^2.0.16"
+    gatsby-link "^2.0.17"
     gatsby-plugin-page-creator "^2.0.12"
     gatsby-react-router-scroll "^2.0.7"
     gatsby-telemetry "^1.0.9"
@@ -10671,7 +10672,7 @@ potrace@^2.1.1:
   dependencies:
     jimp "^0.2.24"
 
-prebuild-install@^5.2.2:
+prebuild-install@^5.2.2, prebuild-install@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-5.3.0.tgz#58b4d8344e03590990931ee088dd5401b03004c8"
   integrity sha512-aaLVANlj4HgZweKttFNUVNRxDukytuIuxeK2boIMHjagNJCiVKWFsKF4tCE3ql3GbrD2tExPQ7/pwtEJcHNZeg==
@@ -12113,6 +12114,22 @@ sharp@^0.21.3:
     npmlog "^4.1.2"
     prebuild-install "^5.2.2"
     semver "^5.6.0"
+    simple-get "^3.0.3"
+    tar "^4.4.8"
+    tunnel-agent "^0.6.0"
+
+sharp@^0.22.1:
+  version "0.22.1"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.22.1.tgz#a67c0e75567f03dd5a7861b901fec04072c5b0f4"
+  integrity sha512-lXzSk/FL5b/MpWrT1pQZneKe25stVjEbl6uhhJcTULm7PhmJgKKRbTDM/vtjyUuC/RLqL2PRyC4rpKwbv3soEw==
+  dependencies:
+    color "^3.1.1"
+    detect-libc "^1.0.3"
+    fs-copy-file-sync "^1.1.1"
+    nan "^2.13.2"
+    npmlog "^4.1.2"
+    prebuild-install "^5.3.0"
+    semver "^6.0.0"
     simple-get "^3.0.3"
     tar "^4.4.8"
     tunnel-agent "^0.6.0"
