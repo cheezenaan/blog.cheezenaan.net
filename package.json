@@ -33,7 +33,7 @@
     "gatsby-plugin-sharp": "2.0.37",
     "gatsby-plugin-twitter": "^2.0.9",
     "gatsby-plugin-typescript": "2.0.14",
-    "gatsby-remark-code-titles": "1.0.2",
+    "gatsby-remark-code-titles": "1.1.0",
     "gatsby-remark-images": "3.0.11",
     "gatsby-remark-prismjs": "3.2.9",
     "gatsby-source-filesystem": "2.0.36",
