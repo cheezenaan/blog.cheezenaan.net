@@ -45,7 +45,7 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
-    "@types/react-helmet": "5.0.9",
+    "@types/react-helmet": "5.0.10",
     "@typescript-eslint/eslint-plugin": "1.11.0",
     "@typescript-eslint/parser": "1.11.0",
     "eslint": "6.1.0",
