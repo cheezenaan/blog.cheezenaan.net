@@ -20,7 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "5.10.2",
     "@fortawesome/react-fontawesome": "0.1.7",
     "bloomer": "0.6.5",
-    "bulma": "0.7.5",
+    "bulma": "0.8.0",
     "firebase-tools": "6.9.2",
     "gatsby": "2.13.83",
     "gatsby-plugin-catch-links": "2.1.15",
