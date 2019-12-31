@@ -8,14 +8,15 @@ interface HoverableProps {
 interface Props {
   render: RenderCallback<HoverableProps>;
 }
-
-const initialStyle = { isHovered: false };
-type State = Readonly<typeof initialStyle>;
+type State = { isHovered: boolean };
 
 export class Hoverable extends React.Component<Props, State> {
-  public readonly state: State = initialStyle;
+  public constructor(props: Props) {
+    super(props);
+    this.state = { isHovered: false };
+  }
 
-  private toggleHovered = (e: React.MouseEvent<HTMLElement>) => {
+  private toggleHovered = (e: React.MouseEvent<HTMLElement>): void => {
     e.preventDefault();
     this.setState(prevState => ({ isHovered: !prevState.isHovered }));
   };
