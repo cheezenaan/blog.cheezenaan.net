@@ -3,6 +3,7 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "airbnb",
+    "plugin:import/typescript",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
@@ -16,6 +17,14 @@
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
       { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "tsx": "never"
+      }
     ]
   }
 }
