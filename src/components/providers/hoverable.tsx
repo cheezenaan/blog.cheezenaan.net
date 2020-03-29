@@ -18,7 +18,7 @@ export class Hoverable extends React.Component<Props, State> {
 
   private toggleHovered = (e: React.MouseEvent<HTMLElement>): void => {
     e.preventDefault();
-    this.setState(prevState => ({ isHovered: !prevState.isHovered }));
+    this.setState((prevState) => ({ isHovered: !prevState.isHovered }));
   };
 
   public render(): React.ReactNode {
