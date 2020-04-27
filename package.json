@@ -21,7 +21,7 @@
     "@fortawesome/react-fontawesome": "0.1.8",
     "bloomer": "0.6.5",
     "bulma": "0.8.2",
-    "firebase-tools": "7.15.1",
+    "firebase-tools": "8.2.0",
     "gatsby": "2.19.32",
     "gatsby-plugin-catch-links": "2.1.27",
     "gatsby-plugin-google-analytics": "2.1.37",
