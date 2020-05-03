@@ -5,7 +5,7 @@ ENV ENTRYKIT_VERSION="0.4.0"
 RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERSION}/entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz && \
   tar -xvzf entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz
 
-FROM node:10.19.0-stretch as dev
+FROM node:10.20.1-stretch as dev
 LABEL MAINTAINER "cheezenaan <cheezenaan@gmail.com>"
 
 ENV \
