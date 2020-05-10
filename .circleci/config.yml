@@ -1,9 +1,10 @@
-version: 2
+version: 2.1
 
-default_settings: &default_settings
-  docker:
-    - image: circleci/node:12.16.3-stretch
-  working_directory: ~/repo
+executors:
+  awesome-executor:
+    docker:
+      - image: circleci/node:12.16.3-stretch
+    working_directory: ~/repo
 
 references:
   dependencies_cache_key: &dependencies_cache_key yarn-packages-v1-{{ checksum "yarn.lock" }}
@@ -19,7 +20,7 @@ references:
         - yarn-packages-v1-
 
 workflows:
-  version: 2
+  version: 2.1
   build_and_deploy:
     jobs:
       - install-dependencies-and-lint
@@ -35,7 +36,7 @@ workflows:
 
 jobs:
   install-dependencies-and-lint:
-    <<: *default_settings
+    executor: awesome-executor
     steps:
       - checkout
       - *restore_node_modules
@@ -48,7 +49,7 @@ jobs:
           paths:
             - .
   build:
-    <<: *default_settings
+    executor: awesome-executor
     steps:
       - attach_workspace:
           at: ~/repo
@@ -59,7 +60,7 @@ jobs:
             - public/
             - firebase.json
   deploy:
-    <<: *default_settings
+    executor: awesome-executor
     steps:
       - attach_workspace:
           at: ~/repo
