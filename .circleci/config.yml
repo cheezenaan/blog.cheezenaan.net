@@ -12,7 +12,7 @@ jobs:
           keys:
             - yarn-packages-v1-{{ checksum "yarn.lock" }}
             - yarn-packages-v1-
-      - run: yarn install
+      - run: yarn --frozen-lockfile
       - run: yarn lint
       - run: yarn typecheck
       - run: yarn build
