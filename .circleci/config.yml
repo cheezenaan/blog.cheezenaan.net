@@ -1,8 +1,23 @@
 version: 2
+
 default_settings: &default_settings
   docker:
     - image: circleci/node:12.16.3-stretch
   working_directory: ~/repo
+
+references:
+  dependencies_cache_key: &dependencies_cache_key yarn-packages-v1-{{ checksum "yarn.lock" }}
+  save_node_modules: &save_node_modules
+    save_cache:
+      key: *dependencies_cache_key
+      paths:
+        - node_modules
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - *dependencies_cache_key
+        - yarn-packages-v1-
+
 workflows:
   version: 2
   build_and_deploy:
@@ -17,22 +32,17 @@ workflows:
           filters:
             branches:
               only: master
+
 jobs:
   install-dependencies-and-lint:
     <<: *default_settings
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - yarn-packages-v1-{{ checksum "yarn.lock" }}
-            - yarn-packages-v1-
+      - *restore_node_modules
       - run: yarn --frozen-lockfile
       - run: yarn lint
       - run: yarn typecheck
-      - save_cache:
-          key: yarn-packages-v1-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
+      - *save_node_modules
       - persist_to_workspace:
           root: ~/repo
           paths:
