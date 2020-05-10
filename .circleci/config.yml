@@ -34,8 +34,8 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: deploy to firbase
-          command: $(yarn bin)/firebase deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
+          name: deploy to firebase
+          command: npx firebase deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
 
 workflows:
   version: 2
