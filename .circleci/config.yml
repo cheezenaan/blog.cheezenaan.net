@@ -10,15 +10,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-{{ checksum "yarn.lock" }}
             - yarn-packages-v1-
       - run: yarn install
       - run: yarn lint
       - run: yarn typecheck
       - run: yarn build
       - save_cache:
-          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-packages-v1-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
       - persist_to_workspace:
