@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,tsx,*css}",
+    "format": "prettier --write src/",
     "lint": "npm-run-all lint:*",
     "lint:css": "stylelint src/**/*.css",
     "lint:js": "eslint --ext js,tsx src/",
