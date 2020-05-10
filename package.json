@@ -12,7 +12,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/",
     "lint": "npm-run-all lint:*",
-    "lint:css": "stylelint src/**/*.css",
+    "lint:css": "stylelint src/components",
     "lint:js": "eslint --ext js,tsx src/",
     "typecheck": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"

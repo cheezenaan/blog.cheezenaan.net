@@ -1,4 +1,4 @@
-import './layout.sass';
+import './layout.scss';
 import 'prismjs/themes/prism.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
