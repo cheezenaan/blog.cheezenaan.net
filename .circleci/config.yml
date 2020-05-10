@@ -3,8 +3,22 @@ default_settings: &default_settings
   docker:
     - image: circleci/node:12.16.3-stretch
   working_directory: ~/repo
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - install-dependencies-and-lint
+      - build:
+          requires:
+            - install-dependencies-and-lint
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 jobs:
-  build:
+  install-dependencies-and-lint:
     <<: *default_settings
     steps:
       - checkout
@@ -15,7 +29,6 @@ jobs:
       - run: yarn --frozen-lockfile
       - run: yarn lint
       - run: yarn typecheck
-      - run: yarn build
       - save_cache:
           key: yarn-packages-v1-{{ checksum "yarn.lock" }}
           paths:
@@ -23,9 +36,17 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
+            - .
+  build:
+    <<: *default_settings
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
             - public/
-            - node_modules/
-            - package.json
             - firebase.json
   deploy:
     <<: *default_settings
@@ -35,15 +56,3 @@ jobs:
       - run:
           name: deploy to firebase
           command: npx firebase-tools deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
-
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
