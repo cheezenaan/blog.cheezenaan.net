@@ -1,50 +1,73 @@
-version: 2
-default_settings: &default_settings
-  docker:
-    - image: circleci/node:12.16.3-stretch
-  working_directory: ~/repo
-jobs:
-  build:
-    <<: *default_settings
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-packages-v1-{{ .Branch }}-
-            - yarn-packages-v1-
-      - run: yarn install
-      - run: yarn lint
-      - run: yarn typecheck
-      - run: yarn build
-      - save_cache:
-          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - public/
-            - node_modules/
-            - package.json
-            - firebase.json
-  deploy:
-    <<: *default_settings
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: deploy to firebase
-          command: npx firebase-tools deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
+version: 2.1
+
+executors:
+  awesome-executor:
+    docker:
+      - image: circleci/node:12.16.3-stretch
+    working_directory: ~/repo
+
+references:
+  dependencies_cache_key: &dependencies_cache_key yarn-packages-v1-{{ checksum "yarn.lock" }}
+  save_node_modules: &save_node_modules
+    save_cache:
+      key: *dependencies_cache_key
+      paths:
+        - node_modules
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - *dependencies_cache_key
+        - yarn-packages-v1-
 
 workflows:
-  version: 2
+  version: 2.1
   build_and_deploy:
     jobs:
-      - build
+      - install-dependencies-and-lint
+      - build:
+          requires:
+            - install-dependencies-and-lint
       - deploy:
           requires:
             - build
           filters:
             branches:
               only: master
+
+jobs:
+  install-dependencies-and-lint:
+    executor: awesome-executor
+    steps:
+      - checkout
+      - *restore_node_modules
+      - run: yarn --frozen-lockfile
+      - run: yarn lint
+      - run: yarn typecheck
+      - *save_node_modules
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+  build:
+    executor: awesome-executor
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - public/
+            - firebase.json
+  deploy:
+    executor: awesome-executor
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: deploy to firebase
+          command: |
+            npx firebase-tools deploy \
+            --only hosting \
+            --token $FIREBASE_DEPLOY_TOKEN \
+            --project $FIREBASE_PROJECT
