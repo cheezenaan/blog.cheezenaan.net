@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,tsx,*css}",
+    "format": "prettier --write src/",
     "lint": "npm-run-all lint:*",
     "lint:css": "stylelint src/**/*.css",
     "lint:js": "eslint --ext js,tsx src/",
@@ -59,7 +59,7 @@
     "eslint-plugin-prettier": "3.1.3",
     "eslint-plugin-react": "7.19.0",
     "npm-run-all": "4.1.5",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "stylelint": "9.10.1",
     "stylelint-config-prettier": "8.0.1",
     "stylelint-config-standard": "20.0.0",
