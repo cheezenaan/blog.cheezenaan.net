@@ -35,7 +35,7 @@ jobs:
           at: ~/repo
       - run:
           name: deploy to firebase
-          command: npx firebase deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
+          command: npx firebase-tools deploy --only hosting --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
 
 workflows:
   version: 2
