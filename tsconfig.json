@@ -12,6 +12,7 @@
     "noEmit": true,
     "noEmitHelpers": true,
     "importHelpers": true,
+    "skipLibCheck": true,
 
     /* Strict Type-Checking Options */
     "strict": true,
