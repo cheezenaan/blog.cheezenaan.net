@@ -1,3 +1,11 @@
+.gatsby-highlight {
+  font-size: 0.8em;
+}
+
+code[class*='language-'] {
+  font-size: 0.75em;
+}
+
 /* ref. https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/?=title#include-css */
 .gatsby-code-title {
   color: darkgrey;

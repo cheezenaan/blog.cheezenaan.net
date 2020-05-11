@@ -44,7 +44,7 @@ export const BlogPost: React.SFC<Props> = ({ data, pageContext }) => {
         </Container>
       </Section>
       <Section>
-        <Container>
+        <Container className="blog-navigation">
           {prev && (
             <div>
               prev:{' '}

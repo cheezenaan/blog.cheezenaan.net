@@ -4,6 +4,10 @@
   }
 }
 
+.heading {
+  font-size: 0.8em;
+}
+
 .blog-post {
   &__container {
     h1,
@@ -20,11 +24,18 @@
       padding-top: 3rem;
       padding-bottom: 1.5rem;
     }
-    ul p:not(:last-child) {
-      margin-bottom: -0.25em;
+    p {
+      line-height: 1.8em;
+    }
+    ul li {
+      margin-bottom: 1em;
     }
     .number {
       margin-right: initial;
     }
   }
+}
+
+.blog-navigation {
+  line-height: 2em;
 }

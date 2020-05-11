@@ -36,7 +36,7 @@ const IndexPage: React.SFC<Props> = ({ data }) => {
         <Container>
           {filteredPosts.map(({ post }) => (
             <Box key={post.id}>
-              <Heading>{post.frontmatter.date}</Heading>
+              <Heading> {post.frontmatter.date}</Heading>
               <Subtitle>
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </Subtitle>
