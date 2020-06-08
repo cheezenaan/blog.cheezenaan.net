@@ -3,7 +3,7 @@ version: 2.1
 executors:
   awesome-executor:
     docker:
-      - image: circleci/node:12.17.0-stretch
+      - image: circleci/node:12.18.0-stretch
     working_directory: ~/repo
 
 references:
