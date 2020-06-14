@@ -24,7 +24,7 @@
     "@fortawesome/react-fontawesome": "0.1.10",
     "bloomer": "0.6.5",
     "bulma": "0.9.0",
-    "gatsby": "2.22.22",
+    "gatsby": "2.23.3",
     "gatsby-plugin-catch-links": "2.3.5",
     "gatsby-plugin-google-analytics": "2.3.4",
     "gatsby-plugin-manifest": "2.4.11",
