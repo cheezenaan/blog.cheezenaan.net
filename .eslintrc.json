@@ -1,32 +1,25 @@
 {
-  "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
     "prettier/react"
   ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
-    "import/no-unresolved": "off",
-    "import/prefer-default-export": "off",
-    "prettier/prettier": "error",
-    "react/jsx-filename-extension": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/explicit-function-return-type": [
-      "warn",
-      { "allowExpressions": true, "allowTypedFunctionExpressions": true }
-    ],
+    "@typescript-eslint/no-use-before-define": "error",
     "import/extensions": [
       "error",
-      "ignorePackages",
       {
         "js": "never",
         "tsx": "never"
       }
     ],
-    "no-use-before-define":"off",
-    "@typescript-eslint/no-use-before-define": "error"
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off"
   }
 }
