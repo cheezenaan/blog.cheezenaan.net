@@ -23,7 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "5.14.0",
     "@fortawesome/react-fontawesome": "0.1.11",
     "bloomer": "0.6.5",
-    "bulma": "0.9.0",
+    "bulma": "0.9.1",
     "gatsby": "2.24.65",
     "gatsby-plugin-catch-links": "2.3.12",
     "gatsby-plugin-google-analytics": "2.3.14",
